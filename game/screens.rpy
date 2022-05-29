@@ -291,27 +291,25 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
         if main_menu:
-
-            textbutton _("Start") action Start()
+            frame:
+                    textbutton _("Start") action Start()
 
         else:
+            frame:
+                textbutton _("History") action ShowMenu("history")
 
-            textbutton _("History") action ShowMenu("history")
+            frame:
+                    textbutton _("Save") action ShowMenu("save")
 
-            textbutton _("Save") action ShowMenu("save")
+        frame:
+                textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
+        frame:
+                textbutton _("Settings") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -321,29 +319,42 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        frame:
+                textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            frame:
+                    textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            frame:
+                    textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
+style navigation_hbox is hbox
 
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
+    xalign 0.5
     properties gui.button_text_properties("navigation_button")
+
+style navigation_hbox:
+    xalign 0.5
+    yalign 0.85
+    spacing 20
+
+style navigation_frame:
+    background RoundRect("#7e7b86")
 
 
 ## Main Menu screen ############################################################
@@ -359,28 +370,21 @@ screen main_menu():
 
     add gui.main_menu_background
 
-    ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
-
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
     if gui.show_name:
+    
+        hbox:
+            style "main_menu_hbox"
 
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
+            text "Insert good title here":
                 style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
 
 
 style main_menu_frame is empty
-style main_menu_vbox is vbox
+style main_menu_hbox is hbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
@@ -391,12 +395,10 @@ style main_menu_frame:
 
     background "gui/overlay/main_menu.png"
 
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
+style main_menu_hbox:
+    xalign 0.5
     xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    yalign 0.7
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
