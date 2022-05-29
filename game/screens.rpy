@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -240,28 +240,44 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen quick_menu():
+init:
+    $ quick_menu_open = False
 
-    ## Ensure this appears on top of other screens.
+transform quick_menu_appear:
+    on show:
+        xpos -1000
+        linear 0.3 xpos 0
+    on hide:
+        xpos 0
+        linear 0.3 xpos -1000
+
+screen quick_menu():
     zorder 100
 
-    if quick_menu:
+    frame:
+        style "quick_menu_frame"
 
-        hbox:
-            style_prefix "quick"
+        has hbox:
+            if not quick_menu_open:
+                textbutton "Open" focus_mask None action [Show("quick_menu_full"), SetVariable("quick_menu_open", True)]
 
-            xalign 0.5
-            yalign 1.0
+screen quick_menu_full():
+    zorder 100
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
+    frame at quick_menu_appear:
+        style "quick_menu_frame"
+        
+        has hbox:
+            style_group "quick"
+
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-
+            textbutton _("Load") action ShowMenu('load')
+            textbutton _("Log") action ShowMenu('history')
+            textbutton _("Settings") action ShowMenu('preferences')
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Main") action MainMenu()
+            textbutton _("Close") action [Hide("quick_menu_full"), SetVariable("quick_menu_open", False)]
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -277,7 +293,12 @@ style quick_button:
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
+    size 38
     properties gui.button_text_properties("quick_button")
+
+style quick_menu_frame:
+    yalign 0.05
+    background "#000000"
 
 
 ################################################################################
