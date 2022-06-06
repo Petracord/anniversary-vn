@@ -1,27 +1,33 @@
 init -10 python:
     def thumbnail(f):
-        return Transform(f, zoom = .1852)
+        return Transform(f, xsize=600, ysize=300, fit="contain")
 
-    config.displayable_prefix["thumbnail"] = thumbnail
 
     def thumbnail_locked(f):
-        return Transform(f, blur = 50, zoom=.1852, matrixcolor = SaturationMatrix(0))
+        return Transform(f, xsize=600, ysize=300, fit="contain", blur = 50, matrixcolor = SaturationMatrix(0))
 
     config.displayable_prefix["thumbnail_l"] = thumbnail_locked
 
+    def cg_button(g, cg):
+        cg_file = cg["source"]
+
+        bttn = g.make_button(cg["name"], thumbnail(cg_file), thumbnail_locked(cg_file), xalign=.5, yalign=.5)
+
+        return VBox(bttn, Text("Test", xalign=.5, yalign=.5))
+
 init python:
     g = Gallery()
+
+    cgs = [{"name": "petra_design", "source": "petra_designsheet.webp", "locked": True}] * 9
 
     # general config
     g.navigation = True
     g.hover_border = '#ffffff40'
 
-    g.button("petra_design")
-    g.image("petra_designsheet")
-
-    g.button("petra_design_locked")
-    g.image("petra_designsheet")
-    g.unlock("petra_design_locked")
+    for cg in cgs:
+        g.button(cg["name"])
+        if cg["locked"]:
+            g.unlock(cg["name"])
 
 screen gallery:
     tag menu
@@ -30,18 +36,11 @@ screen gallery:
     # add "gallery_background"
 
 
-    grid 3 3:
-        xfill True
-        yfill True
+    vbox:
+        grid 3 3:
+            xfill True
+            ysize 1000
+            for i in range(9):
+                add cg_button(g, cgs[i])
 
-        add g.make_button("petra_design", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-        add g.make_button("petra_design_locked", "thumbnail:petra_designsheet.webp", "thumbnail_l:petra_designsheet.webp", xalign=.5, yalign=.5)
-
-#        textbutton "Return" action Return() xalign 0.5 yalign 0.5
+        textbutton "Return" action Return() xalign 0.5 yalign 0.5
