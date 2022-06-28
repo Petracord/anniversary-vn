@@ -1,5 +1,5 @@
 define p = Character("Petra", color="#000000", namebox_style="nameboxPetra")
-image petra default = "sprites/petra_gurin.png"
+image petra default = "sprites/placeholder/petra_gurin.png"
 
 label reimu:
 
