@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -151,14 +151,13 @@ style namebox:
 
 style nameboxDefault:
     xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize 200
+    xanchor 0.0
     ypos gui.name_ypos
     ysize gui.namebox_height
 
     background Frame("gui/namebox_default.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    xpadding 70
-    ypadding 35
+    xpadding 120
+    ypadding 30
 
 style nameboxPetra:
     xpos gui.name_xpos
@@ -167,6 +166,56 @@ style nameboxPetra:
     ysize gui.namebox_height
 
     background Frame("gui/namebox_petra.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxPeter:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_peter.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxSelen:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_selen.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxRosemi:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_rosemi.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxNina:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_nina.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxReimu:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_reimu.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     xpadding 120
     ypadding 30
 
