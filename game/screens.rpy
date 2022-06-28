@@ -99,6 +99,7 @@ screen say(who, what):
     style_prefix "say"
 
     window:
+        xmargin 140
         id "window"
 
         if who is not None:
@@ -147,6 +148,27 @@ style namebox:
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
+
+style nameboxDefault:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize 200
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_default.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 70
+    ypadding 35
+
+style nameboxPetra:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_petra.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -240,27 +262,46 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+init:
+    $ quick_menu_open = False
+
+transform quick_menu_appear:
+    on show:
+        xpos -1000
+        linear 0.3 xpos 0
+    on hide:
+        xpos 0
+        linear 0.3 xpos -1000
+
 screen quick_menu():
 
-    ## Ensure this appears on top of other screens.
-    zorder 100
+    frame:
+        style "quick_menu_frame_closed"
 
-    if quick_menu:
+        has hbox:
+            if not quick_menu_open:
+                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [Show("quick_menu_full"), Hide("quick_menu"), SetVariable("quick_menu_open", True)]     
 
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+screen quick_menu_full():
+    zorder 100
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
+    frame at quick_menu_appear:
+        style "quick_menu_frame_open"
+        
+        has hbox:
+            style_group "quick"
+            
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Load") action ShowMenu('load')
+            textbutton _("Log") action ShowMenu('history')
+            textbutton _("Settings") action ShowMenu('preferences')
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Main") action MainMenu()
+            imagebutton auto "gui/overlay/quickmenu_closed_arrow_%s.png" action [Hide("quick_menu_full"), Hide("quick_menu_full"), SetVariable("quick_menu_open", False)]
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -277,7 +318,21 @@ style quick_button:
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
+    size 34
     properties gui.button_text_properties("quick_button")
+
+style quick_menu_frame_closed:
+    yalign 0.05
+    ypadding 40
+    right_padding 50
+    left_padding 30
+    background Frame("gui/overlay/quickmenu_closed.png")
+
+style quick_menu_frame_open:
+    yalign 0.05
+    ypadding 40
+    xpadding 60
+    background Frame("gui/overlay/quickmenu_open.png")
 
 
 ################################################################################
