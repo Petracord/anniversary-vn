@@ -3,8 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
+define e = Character("Petra", color="#000000", namebox_style="nameboxPetra")
+image petra default = "sprites/petra_gurin.png"
 
 # The game starts here.
 
@@ -20,7 +20,9 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show petra default:
+        zoom 2.3
+        xalign 0.5
 
     # These display lines of dialogue.
 
