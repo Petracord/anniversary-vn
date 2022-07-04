@@ -985,6 +985,100 @@ style slider_vbox:
 ##
 ## https://www.renpy.org/doc/html/history.html
 
+screen history_menu(title, scroll=None, yinitial=0.0):
+
+    style_prefix "history_menu"
+
+    frame:
+        style "history_menu_outer_frame"
+
+        hbox:
+
+            frame:
+                style "history_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    imagebutton:
+        xpos 0.735
+        yalign 0.205
+        idle "gui/button/x_button.png"
+        hover "gui/button/x_button.png"
+        action Return()
+    
+    label title
+
+style history_menu_content_frame is empty
+style history_menu_viewport is gui_viewport
+style history_menu_side is gui_side
+style history_menu_scrollbar is gui_vscrollbar
+
+style history_menu_label is gui_label
+style history_menu_label_text is gui_label_text
+
+style return_button is navigation_button
+style return_button_text is navigation_button_text
+
+style history_menu_outer_frame:
+    bottom_padding 45
+    top_padding 120
+    xcenter 0.5
+    xpos 0.5
+    ypos 0.12
+    background "gui/overlay/log_background.png"
+
+style history_menu_content_frame:
+    left_margin 60
+    right_margin 30
+    top_margin 50
+    ysize 790
+
+style history_menu_viewport:
+    xsize 967
+
+style history_menu_vscrollbar:
+    unscrollable None
+
+style history_menu_label:
+    xcenter 0.295
+    ypos 0.2
+
+style history_menu_label_text:
+    size 48
+    color gui.accent_color
+    yalign 0.5
+
 screen history():
 
     tag menu
@@ -992,7 +1086,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use history_menu(title="Log", scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
