@@ -385,11 +385,11 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
-    top_margin 14
+    ypos 14
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
-    size 30
+    yalign 1.0
     properties gui.button_text_properties("quick_button")
 
 style quick_menu_frame:
@@ -431,7 +431,9 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("preferences")
+
+        textbutton _("Credits") action ShowMenu("credits")
 
         if _in_replay:
 
@@ -836,7 +838,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
@@ -1340,6 +1342,57 @@ style help_label_text:
     text_align 1.0
 
 
+## Credits screen #################################################################
+
+init python:
+    import codecs
+
+    def load_creds(filename):
+        lines = []
+        file = config.gamedir + '/credits/' + filename + '.txt'
+        file = file.replace('\\', '/')
+
+        f = codecs.open(file, 'r', 'utf-8')
+        for i in f:
+            line = i.strip()
+            lines.append(line)
+        lines.append('')
+        f.close()
+
+        return lines
+
+screen credits():
+
+    tag menu
+
+    $ programmers = load_creds('programming')
+    $ musicians = load_creds('music')
+    $ artists = load_creds('art')
+
+    use game_menu(_("Credits"), scroll="viewport"):
+
+        style_prefix "credits"
+
+        vbox:
+
+            label "Programming team:"
+            for i in programmers:
+                text i
+            
+            label "Music team:"
+            for i in musicians:
+                text i
+
+            label "Art team:"
+            for i in artists:
+                text i
+
+style credits_label is gui_label
+style credits_label_text is gui_label_text
+style credits_text is gui_text
+
+style credits_label_text:
+    size gui.label_text_size
 
 ################################################################################
 ## Additional screens
