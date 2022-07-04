@@ -21,4 +21,12 @@
 
     petra "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
+    menu test_choices:
+        "This is an option.":
+            "choice 1"
+        "This is another option.":
+            "choice 2"
+        "This is a THIRD option.":
+            "choice 3"
+
     jump reimu_script
