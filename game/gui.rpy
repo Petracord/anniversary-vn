@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Initialization
 ################################################################################
 
@@ -23,7 +23,7 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#0099cc'
+define gui.accent_color = u'#ffad3e'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = u'#888888'
@@ -49,7 +49,7 @@ define gui.hover_muted_color = u'#005b7a'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = u'#000000'
-define gui.interface_text_color = u'#ffffff'
+define gui.interface_text_color = u'#000000'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -64,22 +64,22 @@ define gui.name_text_font = "gui/fonts/Quicksand-Bold.ttf"
 define gui.interface_text_font = "gui/fonts/Quicksand-Bold.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 45
+define gui.text_size = 30
 
 ## The size of character names.
-define gui.name_text_size = 60
+define gui.name_text_size = 35
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 24
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 36
+define gui.label_text_size = 28
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 24
+define gui.notify_text_size = 16
 
 ## The size of the game's title.
-define gui.title_text_size = 75
+define gui.title_text_size = 50
 
 
 ## Main and Game Menus #########################################################
@@ -105,7 +105,7 @@ define gui.textbox_yalign = 1.0
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 130
-define gui.name_ypos = -100
+define gui.name_ypos = -50
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -307,7 +307,7 @@ define gui.frame_tile = False
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
 define gui.bar_size = 38
-define gui.scrollbar_size = 18
+define gui.scrollbar_size = 10
 define gui.slider_size = 38
 
 ## True if bar images should be tiled. False if they should be linearly scaled.

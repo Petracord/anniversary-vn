@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Initialization
 ################################################################################
 
@@ -134,10 +134,10 @@ style namebox_label is say_label
 style window:
     xalign 0.5
     xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
+    yalign 0.75
+    ysize 0
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.5, yalign=0.2)
 
 style namebox:
     xpos gui.name_xpos
@@ -319,21 +319,21 @@ init:
 
 transform qm_show:
     xpos -760
-        linear 0.3 xpos 0
+    linear 0.3 xpos 0
 
 transform qm_hide:
-        xpos 0
+    xpos 0
     linear 0.3 xpos -760
 
 screen quick_menu():
     zorder 100
 
     if first_load:
-    frame:
+        frame:
             xpos -760
             style "quick_menu_frame"
 
-        has hbox:
+            has hbox:
                 style_group "quick"
                 textbutton _("Save") action ShowMenu('save')
                 textbutton _("Load") action ShowMenu('load')
@@ -362,16 +362,16 @@ screen quick_menu():
     if not quick_menu_open and not first_load:
         frame at qm_hide:
             style "quick_menu_frame"
-        
-        has hbox:
-            style_group "quick"
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            textbutton _("Log") action ShowMenu('history')
-            textbutton _("Settings") action ShowMenu('preferences')
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Main") action MainMenu()
+
+            has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
                 imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [SetVariable("quick_menu_open", True)]
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -1148,6 +1148,7 @@ style history_label is gui_label
 style history_label_text is gui_label_text
 
 style history_window:
+    bottom_margin 40
     xfill True
     ysize gui.history_height
 
@@ -1174,8 +1175,8 @@ style history_label:
     xfill True
 
 style history_label_text:
-    xalign 0.5
-
+    xcenter 0.5
+    xpos 0.4
 
 ## Help screen #################################################################
 ##
