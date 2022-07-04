@@ -293,16 +293,18 @@ style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
+    xcenter 0.5
+    ycenter 0.5
 
-    spacing gui.choice_spacing
+    spacing -40
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    background Frame("gui/button/choice_hover_background.png")
+
 
 style choice_button_text is default:
+    yalign 0.5
     properties gui.button_text_properties("choice_button")
 
 
