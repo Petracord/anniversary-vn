@@ -315,36 +315,56 @@ style choice_button_text is default:
 
 init:
     $ quick_menu_open = False
+    $ first_load = True
 
-transform quick_menu_appear:
-    on show:
-        xpos -1000
+transform qm_show:
+    xpos -760
         linear 0.3 xpos 0
-    on hide:
+
+transform qm_hide:
         xpos 0
-        linear 0.3 xpos -1000
+    linear 0.3 xpos -760
 
 screen quick_menu():
-
-    frame:
-        style "quick_menu_frame_closed"
-
-        has hbox:
-            if not quick_menu_open:
-                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [Show("quick_menu_full"), Hide("quick_menu"), SetVariable("quick_menu_open", True)]     
-
-        hbox:
-            style_prefix "quick"
-
-screen quick_menu_full():
     zorder 100
 
-    frame at quick_menu_appear:
-        style "quick_menu_frame_open"
+    if first_load:
+    frame:
+            xpos -760
+            style "quick_menu_frame"
+
+        has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
+                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [SetVariable("quick_menu_open", True), SetVariable("first_load", False)]
+
+    if quick_menu_open and not first_load:
+        frame at qm_show:
+            style "quick_menu_frame"
+
+            has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
+                imagebutton auto "gui/overlay/quickmenu_closed_arrow_%s.png" action [SetVariable("quick_menu_open", False)]
+
+    if not quick_menu_open and not first_load:
+        frame at qm_hide:
+            style "quick_menu_frame"
         
         has hbox:
             style_group "quick"
-            
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Log") action ShowMenu('history')
@@ -352,8 +372,7 @@ screen quick_menu_full():
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Main") action MainMenu()
-            imagebutton auto "gui/overlay/quickmenu_closed_arrow_%s.png" action [Hide("quick_menu_full"), Hide("quick_menu_full"), SetVariable("quick_menu_open", False)]
-
+                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [SetVariable("quick_menu_open", True)]
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -366,23 +385,18 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
+    top_margin 14
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
-    size 34
+    size 30
     properties gui.button_text_properties("quick_button")
 
-style quick_menu_frame_closed:
+style quick_menu_frame:
     yalign 0.05
-    ypadding 40
-    right_padding 50
+    ypadding 30
+    right_padding 40
     left_padding 30
-    background Frame("gui/overlay/quickmenu_closed.png")
-
-style quick_menu_frame_open:
-    yalign 0.05
-    ypadding 40
-    xpadding 60
     background Frame("gui/overlay/quickmenu_open.png")
 
 
