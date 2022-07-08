@@ -1,10 +1,10 @@
 init -10 python:
-    def thumbnail(f):
-        return Transform(f, xsize=600, ysize=400, fit="contain")
+    def thumbnail(f, w, h):
+        return Transform(f, xsize=w, ysize=h, fit="cover")
 
 
-    def thumbnail_locked(f):
-        return Transform(f, xsize=600, ysize=400, fit="contain", blur = 50, matrixcolor = SaturationMatrix(0))
+    def thumbnail_locked(f, w, h):
+        return Transform(f, xsize=w, ysize=h, fit="cover", blur = 50, matrixcolor = SaturationMatrix(0))
 
 
     def grayed(f):
@@ -21,10 +21,9 @@ init -10 python:
     config.displayable_prefix["thumbnail_l"] = thumbnail_locked
 
 
-    def cg_button(g, cgs, i):
-        cg_file = cgs[i]["source"] if i in cgs else "placeholder"
-        bttn = g.make_button(cg["name"], thumbnail(cg_file), thumbnail_locked(cg_file), xalign=.5, yalign=.5)
-        return VBox(bttn, Text("Test", xalign=.5, yalign=.5))
+    def cg_button(g, cg, width=300, height=200):
+        bttn = g.make_button(cg["name"], thumbnail(cg["source"], width, height), thumbnail_locked(cg["source"], width, height), ysize=height, xsize=width)
+        return VBox(bttn, Text("by " + cg["author"], xalign=0, yalign=.5))
 
 
     def nav_image(name, ext="", format="png"):
@@ -38,16 +37,44 @@ init -10 python:
     }
 
     character_cgs = {
-        "selen": [],
-        "reimu": [],
-        "rosemi": []
+        "selen": [
+            {"source": "placeholder", "name": "selen1", "author": "test1"},
+            {"source": "placeholder", "name": "selen2", "author": "test2"},
+            {"source": "placeholder", "name": "selen3", "author": "test3"},
+            {"source": "placeholder", "name": "selen4", "author": "test4"}
+        ],
+        "reimu": [
+            {"source": "placeholder", "name": "reimu1", "author": ""},
+            {"source": "placeholder", "name": "reimu2", "author": ""},
+            {"source": "placeholder", "name": "reimu3", "author": ""},
+            {"source": "placeholder", "name": "reimu4", "author": ""}
+        ],
+        "rosemi": [
+            {"source": "placeholder", "name": "rosemi1", "author": ""},
+            {"source": "placeholder", "name": "rosemi2", "author": ""},
+            {"source": "placeholder", "name": "rosemi3", "author": ""},
+            {"source": "placeholder", "name": "rosemi4", "author": ""}
+        ]
     }
+
+    extras = [
+        {
+            "title": "Extra: Sprites",
+            "cgs": []
+        },
+        {
+            "title": "Extra: Backgrounds",
+            "cgs": []
+        },
+        {
+            "title": "Extra: CGs",
+            "cgs": []
+        }
+    ]
 
 
 init python:
     g = Gallery()
-
-    cgs = [{"name": "petra_design", "source": "petra_designsheet.webp", "locked": True}] * 9
 
     selected_gallery = None
 
@@ -55,10 +82,16 @@ init python:
     g.navigation = True
     g.hover_border = '#ffffff40'
 
-    for cg in cgs:
-        g.button(cg["name"])
-        if cg["locked"]:
-            g.unlock(cg["name"])
+    for cgs in character_cgs.values():
+        for cg in cgs:
+            g.button(cg["name"])
+
+    for cat in extras:
+        for cg in cat["cgs"]:
+            g.button(cg["name"])
+
+    extra_index = 0
+
 
 screen gallery:
     tag menu
@@ -68,6 +101,8 @@ screen gallery:
     add "#fff"
     
     hbox:
+        xfill True
+
         vbox:
             for name in ["selen", "rosemi", "reimu", "extra", "music"]:
                 imagebutton:
@@ -84,13 +119,13 @@ screen gallery:
                     xfill True
 
                     for i in range(4):
-                        add cg_button(g, character_cgs[selected_gallery], i)
+                        add cg_button(g, character_cgs[selected_gallery][i])
 
                 textbutton "Return" action Return() xalign 0.5 yalign 0.5
                 
         elif selected_gallery == "extra":
             vbox:
-                text "Extra" # TODO
+                text extras[extra_index]["title"]
 
                 vpgrid:
                     cols 3
@@ -101,19 +136,28 @@ screen gallery:
                     ysize 900
                     xfill True
 
-                    for i in range(20):
-                        add cg_button(g, [], i)
+                    for i in range(len(extras[extra_index]["cgs"])):
+                        add cg_button(g, extras[extra_index]["cgs"])
 
-                textbutton "Return" action Return() xalign 0.5 yalign 0.5
+                grid 3 1:
+                    xfill True
+                    yalign 1.0
+
+                    if extra_index > 0:
+                        textbutton "<< " + extras[extra_index - 1]["title"] xalign 0.0 yalign 0.5 action SetVariable("extra_index", extra_index - 1)
+                    else:
+                        text ""
+
+                    textbutton "Return" action Return() xalign 0.5 yalign 0.5
+
+                    if extra_index < len(extras) - 1:
+                        textbutton extras[extra_index + 1]["title"] + " >>" xalign 1.0 yalign 0.5 action SetVariable("extra_index", extra_index + 1)
+                    else:
+                        text ""
 
         elif selected_gallery == "music":
             pass
         else:
             vbox:
-                grid 3 3:
-                    xfill True
-                    ysize 1000
-                    for i in range(9):
-                        add cg_button(g, cgs, i)
 
                 textbutton "Return" action Return() xalign 0.5 yalign 0.5
