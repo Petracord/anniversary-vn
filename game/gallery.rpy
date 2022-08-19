@@ -104,12 +104,25 @@ screen gallery:
         xfill True
 
         vbox:
-            for name in ["selen", "rosemi", "reimu", "extra", "music"]:
-                imagebutton:
-                    idle nav_selected(nav_image(name), name, selected_gallery)
-                    hover nav_image(name)
-                    focus_mask nav_image(name, ext="_mask")
-                    action SetVariable("selected_gallery", name)
+            xoffset 40
+            yoffset 120
+            
+            for i, name in enumerate(["selen", "rosemi", "reimu", "extra", "music"]):
+                hbox:
+                    yoffset (i * -50)
+                    if i % 2 == 1:
+                        xoffset 60
+                    imagebutton:
+                        idle nav_selected(nav_image(name), name, selected_gallery)
+                        hover nav_image(name)
+                        focus_mask nav_image(name, ext="_mask")
+                        action SetVariable("selected_gallery", name)
+
+            hbox:
+                yoffset -200
+                xalign .5
+                textbutton "Return" action Return()
+
         
         if selected_gallery in ["selen", "rosemi", "reimu"]:
             vbox:
@@ -120,11 +133,11 @@ screen gallery:
 
                     for i in range(4):
                         add cg_button(g, character_cgs[selected_gallery][i])
-
-                textbutton "Return" action Return() xalign 0.5 yalign 0.5
                 
         elif selected_gallery == "extra":
             vbox:
+                xsize 900
+                xalign 1.0
                 text extras[extra_index]["title"]
 
                 vpgrid:
@@ -148,8 +161,6 @@ screen gallery:
                     else:
                         text ""
 
-                    textbutton "Return" action Return() xalign 0.5 yalign 0.5
-
                     if extra_index < len(extras) - 1:
                         textbutton extras[extra_index + 1]["title"] + " >>" xalign 1.0 yalign 0.5 action SetVariable("extra_index", extra_index + 1)
                     else:
@@ -157,7 +168,4 @@ screen gallery:
 
         elif selected_gallery == "music":
             pass
-        else:
-            vbox:
-
-                textbutton "Return" action Return() xalign 0.5 yalign 0.5
+                
