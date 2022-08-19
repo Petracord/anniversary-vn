@@ -1,35 +1,4 @@
 init -10 python:
-    def thumbnail(f, w, h):
-        return Transform(f, xsize=w, ysize=h, fit="cover")
-
-
-    def thumbnail_locked(f, w, h):
-        return Transform(f, xsize=w, ysize=h, fit="cover", blur = 50, matrixcolor = SaturationMatrix(0))
-
-
-    def grayed(f):
-        return Transform(f, matrixcolor = SaturationMatrix(0))
-
-
-    def nav_selected(f, name, sel):
-        if name == sel:
-            return f
-        else:
-            return grayed(f)
-
-
-    config.displayable_prefix["thumbnail_l"] = thumbnail_locked
-
-
-    def cg_button(g, cg, width=300, height=200):
-        bttn = g.make_button(cg["name"], thumbnail(cg["source"], width, height), thumbnail_locked(cg["source"], width, height), ysize=height, xsize=width)
-        return VBox(bttn, Text("by " + cg["author"], xalign=0, yalign=.5))
-
-
-    def nav_image(name, ext="", format="png"):
-        return "gui/gallery/" + name + ext + "." + format
-
-
     full_name = {
         "selen": "Selen Tatsuki",
         "reimu": "Reimu Endou",
@@ -72,6 +41,48 @@ init -10 python:
         }
     ]
 
+    def thumbnail(f, w, h):
+        return Transform(f, xsize=w, ysize=h, fit="cover")
+
+
+    def thumbnail_locked(f, w, h):
+        return Transform(f, xsize=w, ysize=h, fit="cover", blur = 50, matrixcolor = SaturationMatrix(0))
+
+
+    def grayed(f):
+        return Transform(f, matrixcolor = SaturationMatrix(0))
+
+
+    def nav_selected(f, name, sel):
+        if name == sel:
+            return f
+        else:
+            return grayed(f)
+
+
+    config.displayable_prefix["thumbnail_l"] = thumbnail_locked
+
+
+    def cg_button(g, cg, width=300, height=200):
+        bttn = g.make_button(cg["name"], thumbnail(cg["source"], width, height), thumbnail_locked(cg["source"], width, height), ysize=height, xsize=width)
+        return VBox(bttn, Text("by " + cg["author"], xalign=0, yalign=.5))
+
+
+    def nav_image(name, ext="", format="png"):
+        return "gui/gallery/" + name + ext + "." + format
+
+    def gallery_name(gallery, i):
+        if gallery in ["selen", "rosemi", "reimu"]:
+            return full_name[selected_gallery]
+        elif gallery == "extra":
+            return extras[i]["title"]
+        elif gallery == "music":
+            return "Music"
+        else:
+            return ""
+
+    
+
 
 init python:
     g = Gallery()
@@ -104,6 +115,7 @@ screen gallery:
         xfill True
 
         vbox:
+            xsize 480
             xoffset 40
             yoffset 120
             
@@ -118,27 +130,19 @@ screen gallery:
                         focus_mask nav_image(name, ext="_mask")
                         action SetVariable("selected_gallery", name)
 
-            hbox:
-                yoffset -200
-                xalign .5
-                textbutton "Return" action Return()
+        vbox:
+            ysize 1000
+            # title
+            text gallery_name(selected_gallery, extra_index)
 
-        
-        if selected_gallery in ["selen", "rosemi", "reimu"]:
-            vbox:
-                text full_name[selected_gallery]
-
+            if selected_gallery in ["selen", "rosemi", "reimu"]:
                 grid 2 2:
                     xfill True
 
                     for i in range(4):
                         add cg_button(g, character_cgs[selected_gallery][i])
                 
-        elif selected_gallery == "extra":
-            vbox:
-                xsize 900
-                xalign 1.0
-                text extras[extra_index]["title"]
+            elif selected_gallery == "extra":
 
                 vpgrid:
                     cols 3
@@ -152,20 +156,22 @@ screen gallery:
                     for i in range(len(extras[extra_index]["cgs"])):
                         add cg_button(g, extras[extra_index]["cgs"])
 
-                grid 3 1:
-                    xfill True
-                    yalign 1.0
+            elif selected_gallery == "music":
+                pass
 
-                    if extra_index > 0:
-                        textbutton "<< " + extras[extra_index - 1]["title"] xalign 0.0 yalign 0.5 action SetVariable("extra_index", extra_index - 1)
-                    else:
-                        text ""
+            grid 3 1:
+                xfill True
+                yalign 1.0
 
-                    if extra_index < len(extras) - 1:
-                        textbutton extras[extra_index + 1]["title"] + " >>" xalign 1.0 yalign 0.5 action SetVariable("extra_index", extra_index + 1)
-                    else:
-                        text ""
+                if selected_gallery == "extra" and extra_index > 0:
+                    textbutton "<< " + extras[extra_index - 1]["title"] xanchor 0.0 xpos 0.25 action SetVariable("extra_index", extra_index - 1)
+                else:
+                    text ""
 
-        elif selected_gallery == "music":
-            pass
+                textbutton "Return" xalign .5 action Return()
+
+                if selected_gallery == "extra" and extra_index < len(extras) - 1:
+                    textbutton extras[extra_index + 1]["title"] + " >>" xanchor 1.0 xpos 0.75 action SetVariable("extra_index", extra_index + 1)
+                else:
+                    text ""
                 
