@@ -99,6 +99,7 @@ screen say(who, what):
     style_prefix "say"
 
     window:
+        xmargin 140
         id "window"
 
         if who is not None:
@@ -133,10 +134,10 @@ style namebox_label is say_label
 style window:
     xalign 0.5
     xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
+    yalign 0.75
+    ysize 0
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.5, yalign=0.2)
 
 style namebox:
     xpos gui.name_xpos
@@ -147,6 +148,76 @@ style namebox:
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
+
+style nameboxDefault:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_default.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxPetra:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_petra.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxPeter:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_peter.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxSelen:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_selen.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxRosemi:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_rosemi.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxNina:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_nina.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
+
+style nameboxReimu:
+    xpos gui.name_xpos
+    xanchor 0.0
+    ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox_reimu.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpadding 120
+    ypadding 30
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -222,16 +293,18 @@ style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.5
-    ypos 405
-    yanchor 0.5
+    xcenter 0.5
+    ycenter 0.5
 
-    spacing gui.choice_spacing
+    spacing -40
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    background Frame("gui/button/choice_hover_background.png")
+
 
 style choice_button_text is default:
+    yalign 0.5
     properties gui.button_text_properties("choice_button")
 
 
@@ -240,28 +313,66 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen quick_menu():
+init:
+    $ quick_menu_open = False
+    $ first_load = True
 
-    ## Ensure this appears on top of other screens.
+transform qm_show:
+    xpos -760
+    linear 0.3 xpos 0
+
+transform qm_hide:
+    xpos 0
+    linear 0.3 xpos -760
+
+screen quick_menu():
     zorder 100
 
-    if quick_menu:
+    if first_load:
+        frame:
+            xpos -760
+            style "quick_menu_frame"
 
-        hbox:
-            style_prefix "quick"
+            has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
+                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [SetVariable("quick_menu_open", True), SetVariable("first_load", False)]
 
-            xalign 0.5
-            yalign 1.0
+    if quick_menu_open and not first_load:
+        frame at qm_show:
+            style "quick_menu_frame"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
+                imagebutton auto "gui/overlay/quickmenu_closed_arrow_%s.png" action [SetVariable("quick_menu_open", False)]
 
+    if not quick_menu_open and not first_load:
+        frame at qm_hide:
+            style "quick_menu_frame"
+
+            has hbox:
+                style_group "quick"
+                textbutton _("Save") action ShowMenu('save')
+                textbutton _("Load") action ShowMenu('load')
+                textbutton _("Log") action ShowMenu('history')
+                textbutton _("Settings") action ShowMenu('preferences')
+                textbutton _("Auto") action Preference("auto-forward", "toggle")
+                textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+                textbutton _("Main") action MainMenu()
+                imagebutton auto "gui/overlay/quickmenu_open_arrow_%s.png" action [SetVariable("quick_menu_open", True)]
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -274,10 +385,19 @@ style quick_button is default
 style quick_button_text is button_text
 
 style quick_button:
+    ypos 14
     properties gui.button_properties("quick_button")
 
 style quick_button_text:
+    yalign 1.0
     properties gui.button_text_properties("quick_button")
+
+style quick_menu_frame:
+    yalign 0.05
+    ypadding 30
+    right_padding 40
+    left_padding 30
+    background Frame("gui/overlay/quickmenu_open.png")
 
 
 ################################################################################
@@ -307,7 +427,7 @@ screen navigation():
 
         frame:
                 textbutton _("Load") action ShowMenu("load")
-
+                
         frame:
                 textbutton _("Settings") action ShowMenu("preferences")
 
@@ -718,7 +838,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
@@ -881,6 +1001,100 @@ style slider_vbox:
 ##
 ## https://www.renpy.org/doc/html/history.html
 
+screen history_menu(title, scroll=None, yinitial=0.0):
+
+    style_prefix "history_menu"
+
+    frame:
+        style "history_menu_outer_frame"
+
+        hbox:
+
+            frame:
+                style "history_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    imagebutton:
+        xpos 0.735
+        yalign 0.205
+        idle "gui/button/x_button.png"
+        hover "gui/button/x_button.png"
+        action Return()
+    
+    label title
+
+style history_menu_content_frame is empty
+style history_menu_viewport is gui_viewport
+style history_menu_side is gui_side
+style history_menu_scrollbar is gui_vscrollbar
+
+style history_menu_label is gui_label
+style history_menu_label_text is gui_label_text
+
+style return_button is navigation_button
+style return_button_text is navigation_button_text
+
+style history_menu_outer_frame:
+    bottom_padding 45
+    top_padding 120
+    xcenter 0.5
+    xpos 0.5
+    ypos 0.12
+    background "gui/overlay/log_background.png"
+
+style history_menu_content_frame:
+    left_margin 60
+    right_margin 30
+    top_margin 50
+    ysize 790
+
+style history_menu_viewport:
+    xsize 967
+
+style history_menu_vscrollbar:
+    unscrollable None
+
+style history_menu_label:
+    xcenter 0.295
+    ypos 0.2
+
+style history_menu_label_text:
+    size 48
+    color gui.accent_color
+    yalign 0.5
+
 screen history():
 
     tag menu
@@ -888,7 +1102,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use history_menu(title="Log", scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -936,6 +1150,7 @@ style history_label is gui_label
 style history_label_text is gui_label_text
 
 style history_window:
+    bottom_margin 40
     xfill True
     ysize gui.history_height
 
@@ -962,8 +1177,8 @@ style history_label:
     xfill True
 
 style history_label_text:
-    xalign 0.5
-
+    xcenter 0.5
+    xpos 0.4
 
 ## Help screen #################################################################
 ##
@@ -1127,6 +1342,57 @@ style help_label_text:
     text_align 1.0
 
 
+## Credits screen #################################################################
+
+init python:
+    import codecs
+
+    def load_creds(filename):
+        lines = []
+        file = config.gamedir + '/credits/' + filename + '.txt'
+        file = file.replace('\\', '/')
+
+        f = codecs.open(file, 'r', 'utf-8')
+        for i in f:
+            line = i.strip()
+            lines.append(line)
+        lines.append('')
+        f.close()
+
+        return lines
+
+screen credits():
+
+    tag menu
+
+    $ programmers = load_creds('programming')
+    $ musicians = load_creds('music')
+    $ artists = load_creds('art')
+
+    use game_menu(_("Credits"), scroll="viewport"):
+
+        style_prefix "credits"
+
+        vbox:
+
+            label "Programming team:"
+            for i in programmers:
+                text i
+            
+            label "Music team:"
+            for i in musicians:
+                text i
+
+            label "Art team:"
+            for i in artists:
+                text i
+
+style credits_label is gui_label
+style credits_label_text is gui_label_text
+style credits_text is gui_text
+
+style credits_label_text:
+    size gui.label_text_size
 
 ################################################################################
 ## Additional screens

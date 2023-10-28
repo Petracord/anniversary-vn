@@ -1,0 +1,6 @@
+{
+	"files.exclude": {
+		"**/*.rpyc": true,
+		"**/*.rpyc.bak": true
+	}
+}
