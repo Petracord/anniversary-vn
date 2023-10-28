@@ -435,6 +435,9 @@ screen navigation():
 
         textbutton _("Credits") action ShowMenu("credits")
 
+        if main_menu:
+            textbutton _("Gallery") action ShowMenu("gallery")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
