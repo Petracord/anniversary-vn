@@ -7,6 +7,7 @@ define peter = Character("Peter", color="#000000", namebox_style="nameboxPeter")
 
 # Selen
 define selen = Character("Selen", color="#000000", namebox_style="nameboxSelen")
+define ember = Character("Ember", color="#000000", namebox_style="nameboxSelen")
 
 # Rosemi
 define rosemi = Character("Rosemi", color="#000000", namebox_style="nameboxRosemi")

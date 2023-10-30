@@ -1,7 +1,5 @@
 # Day 1, Part 1
 
-$ prologue_rejection_flag = False
-
 label intro_day_1:
     # [open the VN on flashback of Rosemi asking Petra if she wants to live among humans in human society; clip from OG lore video of the debut stream] 
     # Scene: Petra's room (Day) BG 
