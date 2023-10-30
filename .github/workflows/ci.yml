@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    paths:
+      - "game/**"
+
+env:
+  RENPY_VERSION: "8.1.3"
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ren'Py dependencies
+        run: apt-get install --yes bzip2 wget libxext6 libllvm6.0 mesa-utils
+
+      - name: Build VN
+        run: ./scripts/ci.sh
