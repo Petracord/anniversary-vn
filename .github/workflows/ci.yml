@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Ren'Py dependencies
-        run: apt-get install --yes bzip2 wget libxext6 libllvm6.0 mesa-utils
+        run: sudo apt-get install --yes bzip2 wget libxext6 libllvm15 mesa-utils
 
       - name: Build VN
         run: ./scripts/ci.sh

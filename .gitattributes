@@ -6,3 +6,4 @@
 # Filters for Git LFS
 *.jpg filter=lfs diff=lfs merge=lfs
 *.png filter=lfs diff=lfs merge=lfs
+*.webp filter=lfs diff=lfs merge=lfs
