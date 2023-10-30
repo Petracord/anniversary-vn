@@ -21,3 +21,6 @@ define reimu = Character("Reimu", color="#000000", namebox_style="nameboxReimu")
 # Elira (test character)
 define elira = Character("Elira", image="elira", color="#000000", namebox_style="nameboxPeter")
 image elira default = "sprites/placeholder/elira_default.png"
+
+# Used for new or currently unknown speakers
+define mystery = Character("???", color="#000000", namebox_style="nameboxDefault")
