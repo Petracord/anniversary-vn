@@ -4,7 +4,7 @@ label intro_day_1_2:
     #Scene: Fade into Hallway (day) BG 
     #BGM Meet The Characters
 
-    scene hallway day
+    scene bg hallway
 
     # All 4 girls are on screen
     show selen happy at right
@@ -113,7 +113,7 @@ label intro_day_1_2:
     # Scene: Fade-in-fade-out to Petra's Room (day) BG 
     # BGM Meet The Characters
 
-    scene petra_room day
+    scene bg bedroom
 
     show nina happy
     nina "Good job, Petra! You're learning pretty fast" 

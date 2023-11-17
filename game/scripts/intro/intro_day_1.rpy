@@ -2,9 +2,7 @@
 
 label intro_day_1:
     # [open the VN on flashback of Rosemi asking Petra if she wants to live among humans in human society; clip from OG lore video of the debut stream] 
-    # Scene: Petra's room (Day) BG 
-
-    scene petra_room day
+    scene bg bedroom
     show petra default at center
 
     petra "(Now that I think about it... Did I even have a choice then?)" 
@@ -72,7 +70,7 @@ label intro_day_1:
     petra "(...how is she so energetic this early in the morning?)" 
 
     # Scene: transition to Hallway (day) BG
-    scene hallway day
+    scene bg hallway
 
     show petra default at left
     show nina happy at right
@@ -103,7 +101,7 @@ label intro_day_1:
 
     # Scene: fade-in-fade-out Hallway (day) BG 
     # clock ticking sfx 
-    scene hallway day
+    scene bg hallway
 
     show petra default at left
     show nina default at right
@@ -136,7 +134,7 @@ label intro_day_1:
     selen "Phew, I'm not late then! Let's go!"
 
     # Scene: Transition to Cafeteria (day) BG
-    scene cafeteria day
+    scene bg cafeteria
 
     show petra default at left
 

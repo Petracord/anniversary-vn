@@ -1,2 +1,12 @@
 define nina = Character("Nina", image="nina", color="#000000", namebox_style="nameboxNina")
-image nina default = "sprites/placeholder/nina_default.png"
+
+image nina default = Image("images/sprites/nina/default.webp", oversample = 2)
+image nina competitive = Image("images/sprites/nina/competitive.webp", oversample = 2)
+image nina excited = Image("images/sprites/nina/excited.webp", oversample = 2)
+image nina happy = Image("images/sprites/nina/happy.webp", oversample = 2)
+image nina laugh = Image("images/sprites/nina/laugh.webp", oversample = 2)
+image nina proud = Image("images/sprites/nina/proud.webp", oversample = 2)
+image nina serious = Image("images/sprites/nina/serious.webp", oversample = 2)
+image nina smug = Image("images/sprites/nina/smug.webp", oversample = 2)
+image nina surprised = Image("images/sprites/nina/surprised.webp", oversample = 2)
+image nina worried = Image("images/sprites/nina/worried.webp", oversample = 2)
