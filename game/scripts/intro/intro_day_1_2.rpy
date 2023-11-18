@@ -8,8 +8,8 @@ label intro_day_1_2:
 
     # All 4 girls are on screen
     show selen happy at right
-    show rosemi happy at right
-    show nina happy at right
+    show rosemi happy at slightright
+    show nina happy at outer_right
     show petra default at left
 
     selen "Alright, I'm off to finish up some work."
@@ -115,7 +115,8 @@ label intro_day_1_2:
 
     scene bg bedroom
 
-    show nina happy
+    show petra sad at left
+    show nina happy at right
     nina "Good job, Petra! You're learning pretty fast" 
     nina "Your academic progress is on track with our schedule, and your communication skills have improved a lot!" 
 

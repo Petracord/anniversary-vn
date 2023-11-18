@@ -10,13 +10,13 @@ label intro_day_1:
     petra "(... do I even know how to say no…?)" 
     petra "(I don't think I've said no to anything they've asked so far...)"
     petra "(I guess everything they've suggested has been for my own good... I think... so I really didn't need to…?)" 
-    petra "(As long as they don’t hurt me if I cooperate…)"
-    petra "(They wouldn’t do that.)"
-    petra "(They… They’ve been nice after all.)"
+    petra "(As long as they don't hurt me if I cooperate…)"
+    petra "(They wouldn't do that.)"
+    petra "(They… They've been nice after all.)"
+ 
+    # flip Petra's sprite horizontally back and forth to indicate her looking around her room
 
-    # flip Petra’s sprite horizontally back and forth to indicate her looking around her room
-
-    petra "(Well… Either way, I shouldn’t stay in bed all day.)"
+    petra "(Well… Either way, I shouldn't stay in bed all day.)"
 
     # sheets moving sfx  
 
@@ -44,7 +44,7 @@ label intro_day_1:
     show petra default
     # Petra Greeting (shy) sfx
     petra "G-Good morning, Nina…"
-    petra "(What’s the point of knocking if you’re just going to let yourself in…?)"
+    petra "(What's the point of knocking if you're just going to let yourself in…?)"
     petra "(And here I thought being given my own room was a sign of respect towards my privacy…)"
 
     show nina happy
@@ -52,7 +52,7 @@ label intro_day_1:
     nina "Are you ready? wanna grab breakfast together?" 
     petra "..." 
     nina  "..."
-    nina "It's okay, there’s no rush~"
+    nina "It's okay, there's no rush~"
     petra "(I still don't know how to say no…)"
     petra "O-Okay…"
 
@@ -89,7 +89,7 @@ label intro_day_1:
 
     nina " I see you've been staring outside for a while, would you like to take a stroll today, Honey?" 
     petra "..."
-    nina "Well, we’ve already told you this but you’re free to roam the facility, any time you want."
+    nina "Well, we've already told you this but you're free to roam the facility, any time you want."
     nina "This place is safe, no need to worry."
 
     show petra soft_sad_smile
@@ -127,7 +127,8 @@ label intro_day_1:
     nina "Haha, good morning to you too, Ember!"
 
     # add some proper offset
-    show selen happy at right
+    show selen happy at slightright
+    show nina happy at outer_right
 
     selen "Have you two had breakfast yet?" 
     nina "Not yet, we're going to the cafeteria now!" 
@@ -137,10 +138,8 @@ label intro_day_1:
     scene bg cafeteria
 
     show petra default at left
-
-    show nina default at right
-    # TODO: Add offset
-    show selen default at right 
+    show nina default at slightright
+    show selen default at outer_right 
 
     nina "Alright Honey, anything else you'd like?"
     petra "Hmm..." 
@@ -223,9 +222,9 @@ label intro_day_1:
     show petra default at left
     
     # TODO: placement
-    show rosemi default at right
+    show rosemi default at slightright
     show selen default at right
-    show nina default at right
+    show nina default at outer_right
 
     show nina excited
     nina "That sounds amazing!"

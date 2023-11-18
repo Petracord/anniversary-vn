@@ -1,9 +1,23 @@
-default slightleft = Position(xpos=0.3, xanchor='left')
-default left = Position(xpos=0.2, xanchor='left')
-default thirdleft = Position(xpos=0.33, xanchor='left')
-default extremeleft = Position(xpos=0.05, xanchor='left')
-default center = Position(xpos=0.5, xanchor='center')
-default slightright = Position(xpos=0.7, xanchor='right')
-default right = Position(xpos=0.8, xanchor='right')
-default thirdright = Position(xpos=0.66, xanchor='right')
-default extremeright = Position(xpos=0.95, xanchor='right')
+transform left:
+    zoom 1.5
+    xcenter 0.25
+
+transform slightleft:
+    zoom 1.5
+    xcenter 0.33
+
+transform center:
+    zoom 1.5
+    xcenter 0.5
+
+transform slightright:
+    zoom 1.5
+    xcenter 0.66
+
+transform right:
+    zoom 1.5
+    xcenter 0.75
+
+transform outer_right:
+    zoom 1.5
+    xcenter 0.9

@@ -16,7 +16,7 @@ label intro_day_1_b:
     petra "(Is this what it means to be institutionalized?)" 
     petra "(Did they not expect me to be able to adjust to the transition? What do they take me for?)" 
     
-    show petra Annoyed
+    show petra annoyed
     petra "(I've survived in Antarctica all these years on my own! I'm more than capable of adapting to new environments!)" 
 
     show petra angry
