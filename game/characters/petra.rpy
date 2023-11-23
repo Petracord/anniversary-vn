@@ -1,5 +1,12 @@
 define petra = Character("Petra", image="petra", color="#000000", namebox_style="nameboxPetra")
 
-# sprites
-image petra default = Image("images/sprites/petra/petra_default.webp", oversample=2)
-image petra shy = Image("images/sprites/petra/petra_shy.webp", oversample=2)
+image petra angry = Image("images/sprites/petra/angry.webp", oversample=2)
+image petra annoyed = Image("images/sprites/petra/annoyed.webp", oversample=2)
+image petra anxious = Image("images/sprites/petra/anxioussad.webp", oversample=2)
+image petra deadpan = Image("images/sprites/petra/deadpan.webp", oversample=2)
+image petra default = Image("images/sprites/petra/def.webp", oversample=2)
+image petra sad = Image("images/sprites/petra/sad.webp", oversample=2)
+image petra shocked = Image("images/sprites/petra/shocked.webp", oversample=2)
+image petra shy = Image("images/sprites/petra/shy.webp", oversample=2)
+image petra softsadsmile = Image("images/sprites/petra/softsadsmile.webp", oversample=2)
+image petra thinking = Image("images/sprites/petra/thinking.webp", oversample=2)
