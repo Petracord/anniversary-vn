@@ -1,6 +1,6 @@
 # Day 1, Part 1, Choice (b)
 
-label intro_day_1_b:
+label intro_day_1_bad:
 
     show petra confused
 

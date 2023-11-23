@@ -142,4 +142,8 @@ label intro_day_1_2:
     show petra shocked
     petra "...FWEHHH!?" 
 
-# TODO: TO BE CONTINUED SCREEN
+    if prologue_rejection_flag:
+        jump intro_day_1_2_bad
+    else:
+        jump intro_day_1_2_good
+    

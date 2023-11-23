@@ -324,9 +324,9 @@ label intro_day_1:
     menu present_choices:
         # This option does not increase or decrease Petra's affection with any character! The dialogues triggered by this option are in [Day 1, part 1.a]. 
         "Th-Thank you…":
-            jump intro_day_1_a
+            jump intro_day_1_good
         
         # This option does not increase or decrease Petra's affection with any character either, but it does change what dialogue appears in future scenes! The dialogues triggered by this option are in [Day 1, part 1.b].
         "I-I'm not a little kid, you know!":
             $ prologue_rejection_flag = True
-            jump intro_day_1_b
+            jump intro_day_1_bad

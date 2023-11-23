@@ -1,6 +1,6 @@
 # Day 1, Part 1, Choice (a)
 
-label intro_day_1_a:
+label intro_day_1_good:
     show petra default
     petra "(Th-They actually like me…?)"
     petra "(I thought that they were just being nice cause it's their job…)"
