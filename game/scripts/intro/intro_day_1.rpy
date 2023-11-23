@@ -3,7 +3,7 @@
 label intro_day_1:
     # [open the VN on flashback of Rosemi asking Petra if she wants to live among humans in human society; clip from OG lore video of the debut stream] 
     scene bg bedroom
-    show petra default at center
+    show petra default at left
 
     petra "(Now that I think about it... Did I even have a choice then?)" 
     petra "(What would they have done, if I had said no....?)" 
@@ -18,30 +18,32 @@ label intro_day_1:
 
     petra "(Well… Either way, I shouldn't stay in bed all day.)"
 
-    # sheets moving sfx  
+    # Put this over the animation instead?
+    play sound ["sfx/sheets_rustling.ogg", "<silence .5>", "sfx/door open.ogg"]
+    pause 5
 
-    # Door opening sfx 
+    show bg bedroom with fade
 
-    # Scene: Screen fade-in-fade-out, to show time has passed 
+    play sound "sfx/door knock.ogg"
+    pause 2
 
-    # Door knock sfx 
-
+    show petra default at left
     petra "Huh?!"
     petra "(Oh, it must be–)"
 
-    # Door Open sfx
+    play sound "sfx/door open.ogg"
+    pause 2
 
+    play music "bgm/meet_the_characters.ogg" fadein 1.0 volume 0.75
     show petra at left
-    
-    # TODO: fade-in or other kind of special entry?
     show nina excited at right
     
-    # BGM Meet The Characters
     # Nina greeting sfx
 
     nina "Good morning, Honey!"
 
     show petra default
+
     # Petra Greeting (shy) sfx
     petra "G-Good morning, Nina…"
     petra "(What's the point of knocking if you're just going to let yourself in…?)"
@@ -69,8 +71,7 @@ label intro_day_1:
     petra "Y-Yeah…"
     petra "(...how is she so energetic this early in the morning?)" 
 
-    # Scene: transition to Hallway (day) BG
-    scene bg hallway
+    scene bg hallway with fade
 
     show petra default at left
     show nina happy at right
@@ -99,17 +100,16 @@ label intro_day_1:
     petra "..." 
     petra "(Nina is warm too)"
 
-    # Scene: fade-in-fade-out Hallway (day) BG 
-    # clock ticking sfx 
-    scene bg hallway
+    scene bg hallway with fade
+    play music "ambient/clock_ticking.ogg" volume 0.5
 
-    show petra default at left
-    show nina default at right
+    # flip sprites to face left
+    show petra default at slightright
+    show nina default at outer_right
 
     mystery "Hey!" 
     mystery "Nina! Petra!" 
 
-    # Selen's sprite doesn't appear yet, it's just her voice they heard (ideally, have sound byte of Selen saying that)
     # Scene: Selen Intro CG START
     # Selen greeting sfx
 
@@ -122,24 +122,22 @@ label intro_day_1:
     # Dog happy bark sfx or some other noise that could be used to express a cheerful ''good morning'' from a dragon
     ember "Gawr!!"
     
-    show nina happy at right
+    show nina happy at slightright
 
     nina "Haha, good morning to you too, Ember!"
 
     # add some proper offset
-    show selen happy at slightright
-    show nina happy at outer_right
+    show selen happy at slightleft
 
     selen "Have you two had breakfast yet?" 
     nina "Not yet, we're going to the cafeteria now!" 
     selen "Phew, I'm not late then! Let's go!"
 
-    # Scene: Transition to Cafeteria (day) BG
-    scene bg cafeteria
+    scene bg cafeteria with fade
 
-    show petra default at left
+    show petra default at center
     show nina default at slightright
-    show selen default at outer_right 
+    show selen default at slightleft 
 
     nina "Alright Honey, anything else you'd like?"
     petra "Hmm..." 
@@ -189,8 +187,11 @@ label intro_day_1:
     mystery "Hey guys! Over here!"
     mystery "I saved a few seats!"
 
-    # Turn all three sprites to face towards one side of the screen
+    show selen default at center
+    show petra default at slightright
+    show nina default at outer_right
 
+    # make all face left and move right
     nina "Aww Honey! Thank you!" 
     selen "Thanks, Rosemi." 
     petra "T-Thank you…"
@@ -198,12 +199,13 @@ label intro_day_1:
     # Rosemi's sprite appears on screen from the side the other sprites are facing
     # Rosemi greeting sfx
 
-    # TODO: Maybe also have on the right with Nina and Selen?
-    show rosemi happy at right
+    # move in from left
+    show rosemi happy at outer_left
 
     rosemi "Don't mention it"
 
-    # nina Happy, rosemi Default 
+    show nina happy
+    show rosemi default 
     nina "Ooh, is that omurice? It looks so cute!"
 
     show rosemi intro cg
@@ -219,14 +221,12 @@ label intro_day_1:
 
     # Scene: Rosemi Intro CG END 
 
-    show petra default at left
-    
-    # TODO: placement
-    show rosemi default at slightright
-    show selen default at right
-    show nina default at outer_right
+    # TODO: equidistant spacing, left to right Rosemi, Selen, Nina, Petra
+    show rosemi default at slot1
+    show selen default at slot2
+    show nina excited at slot3
+    show petra default at slot4
 
-    show nina excited
     nina "That sounds amazing!"
     
     show nina happy
