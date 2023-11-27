@@ -1,0 +1,1 @@
+define selen = Character("Selen", color="#000000", namebox_style="nameboxSelen")
