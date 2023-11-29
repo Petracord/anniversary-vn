@@ -3,13 +3,13 @@ label reimu_intro:
     petra "... I think I'll try talking to Reimu." 
 
     # nina Happy 
-    nina "That's great! You’d be doing her and the rest of us a favor too. She could use the company and social interaction as well after all."
+    nina "That's great! You'd be doing her and the rest of us a favor too. She could use the company and social interaction as well after all."
 
     nina "And besides, you two seem to have gotten along well enough when you first met, right?" 
 
     petra "(Well, I wouldn't describe being terrified of her at first as getting along, but after I realized that she doesn't mean harm... I guess it wasn't that scary anymore.)" 
     petra "... I guess so."
-    petra "(She might understand my experience a bit better too since she’s not here as a researcher either…)"
+    petra "(She might understand my experience a bit better too since she's not here as a researcher either…)"
 
     nina "Then I guess that settles it! If you run into any more issues, just let us know. We're always here to help." 
 

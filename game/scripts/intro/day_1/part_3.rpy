@@ -1,19 +1,17 @@
 label intro_day_1_3:
-    # Scene: Transition to Petra's Room (night) BG 
-    # Blocking: Petra sprite by bed
+    scene bg bedroom_night with fade
 
-    # petra Default (Shy)
+    show petra default at left
     # Yawn SFX
     petra "It's already night?" 
     petra "I didn't even notice... Well, at least I'm done studying everything Nina told me to" 
 
-    # petra Default 
     petra "I guess now I'm free for the entire day tomorrow" 
     petra "..." 
     petra "(What Nina said… I still can't stop thinking about it….)" 
     petra "(Make friends? She makes it sound so easy...)" 
     petra "(I've never had friends before... I spent all those years on my own... so I don't even know how to make friends...)"
-    petra "(I didn’t even know it was a skill that you have to actively hone…)"
+    petra "(I didn't even know it was a skill that you have to actively hone…)"
     petra "(... and I still don't even know how to talk to people properly.)"
     petra "(I've hardly been able to express myself at all... whatever happens, I just go along with it...)"
     petra "(Is this really okay? I don't even feel like I'm ready for something like this..)"
@@ -23,85 +21,90 @@ label intro_day_1_3:
     petra "(But I don't know... am I really supposed to just go up to people and talk to them?? And just like that they'll become my friend??)" 
     petra "That sounds... stupid" 
     petra "..." 
-    # petra Sad 
+    
+    show petra sad
     petra "And even if I did go up to people and talk to them..." 
     petra "Who would even want to be my friend..." 
     petra "..."
 
-    # petra Default (Shy)
+    show petra shy
     petra "... Ugh I feel tired just thinking about all of these things." 
     petra "(I'll think about this later...)" 
 
-    # petra Default 
+    show petra default
     petra "I need to clear my mind, I'll read a book."
 
-    # Scene: Fade-in-fade-out Petra's room (night) BG 
-    # Blocking: Petra sprite by bed
+    scene bg bedroom_night with fade
+    show petra default at left
 
-    # petra Default 
     petra "..." 
 
-    # petra Soft sad smile
+    show petra softsadsmile
     petra "That was a good read." 
 
-
-    # petra Default
+    show petra default
     petra "(Hmm how long have I been reading?)"
     petra "Oh it's almost time for the present reveal!"
 
-    # IF previous choice in [Day 1, part 1]  was "I-I'm not a little kid, you know!"  then the following DIALOGUE is triggered:
-    petra "I-I better get going... I don't want to cause more trouble..." 
-    # ELSE: 
-    petra "I might as well go to the garden now…" 
+    if prologue_rejection_flag:
+        petra "I-I better get going... I don't want to cause more trouble..." 
+    else:
+        petra "I might as well go to the garden now…" 
     
-
-    # Scene : Transition to Hallway (night) BG 
+    scene bg hallway_night with fade
     # Blocking: Petra sprite moving across the screen from left to right
 
-    # petra Default (Shy)
+    show petra shy
     petra "(Hmm it's been a few minutes. They're late.)"
     
-    # petra Default
+    show petra default
     petra "Hmm, it's a pleasant night."
     petra "(They'll be here soon anyways, I might as well take a stroll.)"
 
     # walking sfx (still indoors, in the Rehab center)
 
-    # Scene: Transition to Garden (Night) BG 
+    scene bg garden_night with wipeleft
+
+    # Petra position?
+    
     petra "..." 
     # stepping on grass sfx 
     petra "(... such a nice breeze.)"
     petra "(But being here on my own... It's a little lonely.)"
     petra "..." 
 
-    # Scene: Fade-in-fade-out Garden (night) BG
+    scene bg garden_night with fade
     # Blocking: Petra on left side, flip horizontally and back to make her look around
+
+    show petra default
     petra "Hmm?"
     petra "(I don't think I've ever been to this part of the garden...)" 
 
-    # petra Shocked
+    show petra shocked
     petra "The flowers here...!" 
     petra "They're... glowing!?" 
 
     # Scene: blue glowing flowers from cg or extra art (if we can) cut-in or extra BG not sure
-    # I’ll check in with Azu to see if we can do that
-
+    # I'll check in with Azu to see if we can do that
+    scene bg garden_night_glowing
+    
     petra "Whoa it's... beautiful!" 
 
-    # Scene: blue glowing flowers end
-    # petra petra Thinking Hard
+    scene bg garden_night
+
+    # not sure about this position just yet
+    show petra thinking at right 
     petra "(Are flowers supposed to glow? I'm not sure...)" 
 
-
-    # petra Soft Sad Smile 
+    show petra softsadsmile
     petra "(But it's so pretty... such a soft gentle glow)"
     petra "(It's just like...)" 
     petra "The auroras back home... " 
 
-    # petra Anxious/Sad expression
+    show petra anxious
     petra "... and still cold like home..."
 
-    # petra Default
+    show petra default
     petra "..."
     # bush leaves rustling sfx
 
@@ -110,18 +113,16 @@ label intro_day_1_3:
     petra "... is anyone there?" 
     # Blocking: Petra's sprite moves left to right and again right to left 
 
-
-    # petra Shocked 
+    show petra shocked
     petra "... !" 
     petra "W-what was that?" 
 
-    # Reimu Default expression
-    # Blocking: Reimu sprite appears on the far left of the screen
+    show reimu default at outer_left
 
     petra "(Wait is that a person?)"
 
-    # petra Terrified 
-    petra "(Is that person... *Floating???*)"   #The text in asterisks is in italics
+    show petra terrified
+    petra "(Is that person... {i}Floating???{/i})"
     petra "(W-What!!?? Am I seeing things??)"
 
     # Blocking: Reimu's sprite flips horizontally back and forth, as if she's looking around 
@@ -129,20 +130,23 @@ label intro_day_1_3:
     petra "(No way... i-it's... i-it's-)"
     petra "... a g-g-ghost?!" 
     petra "(Hide!!!)"
+
     # Blocking: Petra's sprite moves to the far right of the screen 
     # bush leaves rustling sfx
 
     reimu "... where... am I?"
     # Blocking: Reimu's sprite moves a bit closer to the center, slowly (If you can make it slow that would be great but if you can't, that's fine). So the sprite is somewhere around center-left. 
 
-    # petra Scared 
+    show petra scared
     petra "..."
+
     # Blocking: Petra's sprite shivers/shakes, should give the feeling that Petra is scared 
     petra "(I need to get out of here!)" 
 
     reimu "... these flowers, who planted them?"
 
-    # petra Terrified (wanna see which expression goes better here, Terrified or scared)
+    show petra terrified
+    
     # Blocking: Petra's sprite moves further right to the edge of the screen a bit of her sprite is off screen 
     # bush leaves rustling sfx (in time with her sprite moving) 
     petra "..."
@@ -152,7 +156,7 @@ label intro_day_1_3:
 
     petra "(I'm almost out…)" 
 
-    # petra Shocked
+    show petra shocked
     petra "... ! " 
     petra "(Huh!? Something's stuck to my foot!?)"
     # vines breaking or twig snapping sfx along with the above dialogue
@@ -165,20 +169,19 @@ label intro_day_1_3:
 
     # Blocking: pan screen towards Petra, sprite is now center-right. 
 
-    # reimu Surprised
+    show reimu surprised
     reimu "...!" 
     reimu "Was that a— Oh, a person!"
     # Blocking: Reimu's sprite moves to the center, close to Petra 
 
-
-    # petra Scared 
+    show petra scared
     petra "(Oh no oh no oh no! She's coming towards me!!)" 
     # Blocking: Petra's sprite trembles 
 
-    # reimu Default
+    show reimu default
     reimu "... did you trip? Are you okay?" 
 
-    # petra Shocked 
+    show petra shocked
     # Blocking: Petra stops trembling 
     petra "... !?" 
     petra "(...''are you okay?'' ...why is she asking me that!?!?!)"
@@ -188,7 +191,7 @@ label intro_day_1_3:
     reimu "... are you scared cause I'm a ghost?"
     reimu "You know, that's kinda rude…" 
 
-    # petra Terrified
+    show petra terrified
     petra "(... WHAT IS SHE ON ABOUT?? WHAT IS GOING ON??)" 
     reimu "Not all ghosts are bad." 
     petra "(NOT ALL GHOSTS?? ...THERE'S MORE???)" 
@@ -201,22 +204,22 @@ label intro_day_1_3:
 
     # Blocking: Reimu's sprite moves to the far left 
 
-    # petra Shocked 
+    show petra shocked
     petra "(... what the hell just happened…?)"
     petra "(Did she just– She just called me rude and left?? I–)" 
 
     # Blocking: Reimu's sprite flips horizontally back and forth, as if she's looking around 
 
-    # petra Scared 
+    show petra scared
     petra "(She's not doing anything to me? She really left me alone...?)"
 
-    # petra Anxious/Sad 
+    show petra anxious
     petra "(Well, she did say she wouldn't hurt me... And she even asked if I was okay.)"
 
-    # petra Thinking Hard 
+    show petra thinking
     petra "(And not to mention, if she really wanted to hurt me she would have done that by now.)"
 
-    # petra Default 
+    show petra default
     petra "(I guess there is some truth to what she's saying…)"
     # Blocking: Petra's sprite moves back to its original height, to show she's standing again
 
@@ -226,17 +229,18 @@ label intro_day_1_3:
     # Blocking: Reimu's sprite flips to face petra
     reimu "Hey! Rude Girl! Before you leave…" 
 
-    # petra Shocked 
+    show petra shocked
     petra "Huh!??" 
     petra "(What now?! Please! I just wanna go back to my room!)"
 
-    # reimu Sad
+    show reimu sad
     reimu "Do you know who planted these flowers?"
     petra "... w-what?"
 
-    # petra Default 
+    show petra default
     petra "... the f-flowers?"
-    # Scene: Reimu Introsemi CG START
+
+    scene cg reimu_intro 
 
     reimu "Yes... I want to know about them." 
     reimu "... do you know who planted these flowers?"
@@ -248,40 +252,40 @@ label intro_day_1_3:
     petra "..." 
     reimu "..."
 
-    # Scene: Reimu Introsemi CG END
-    # Scene: Garden (night) BG 
+    scene bg garden_night
 
-
-    # Petra Anxious/Sad sprite 
-    # Reimu Sad sprite
+    show petra anxious at slightleft
+    show reimu sad at slightright 
     # Blocking: Petra and Reimu's sprite are at the center of the screen, they are standing next to each other, like at talking distance
 
     petra "(Why would the person planting the flowers recognize her? Does she live in the garden or something?!)"
     petra "(No, I would have been told if we had a resident ghost here... I think?)"  
 
 
-    # reimu Neutral
+    show reimu default
     reimu "... you keep staring at me without saying anything."
 
-    # reimu Determined 
+    show reimu determined
     "Oh, do I remind you of someone?!" 
 
-    # petra Shocked 
+    show petra shocked
     petra "Fweeh?! Uhh, was I?!"
-    # petra Scared
+
+    show petra scared
     petra " I-I'm s-s-sorry! I d-didn't mean to...!" 
 
-    # reimu Neutral
+    show reimu default
     reimu "... it's fine, but why were you staring? Are you sure you don't recognise me?"
 
-    # petra Shocked
+    show petra shocked
     petra "(... ! S-She's not angry?)"
-    # petra Default 
+
+    show petra default
     petra "(Actually… She doesn't look bothered at all...)"
     petra "(She's more concerned about being recognised... )" 
     petra "... no, I don't recognise you..." 
 
-    # reimu Sad 
+    show reimu sad
     reimu "..." 
     reimu "Another dead end..." 
 
@@ -291,94 +295,90 @@ label intro_day_1_3:
     reimu "..." 
     reimu "... yes, my memories."
 
-    # petra Shocked 
+    show petra shocked
     petra "(Her memories!?)" 
 
     reimu "Ever since I woke up, I can't remember anything about my past, so I've been floating from place to place..."
 
-    # petra Default (Shy)
+    show petra shy
     petra "(Wandering around with nowhere to go or anyone to count on...)" 
-    petra "(Maybe I don’t have it that bad…)"
+    petra "(Maybe I don't have it that bad…)"
 
-    # reimu Determined
+    show reimu determined
     reimu "But these flowers!" 
     reimu "They feel familiar! I don't know why but I feel comfortable when I see them." 
-    # reimu Sad
+
+    show reimu sad
     reimu "... it's soft gentle glow... reminds me of home." 
     reimu "Hah, even though I can't even remember my home... but it just feels like it... I don't know how to explain it." 
 
-    # petra Default 
+    show petra default
     petra "(... home, huh?)" 
-    # petra Sad
-    petra "(But she's smiling... I guess she must’ve actually been fond of her home…)" 
-
+    
+    show petra sad
+    petra "(But she's smiling... I guess she must've actually been fond of her home…)" 
     petra "H-Hey-"
 
     # Blocking: Nina, Selen and Rosemi's sprites have not appeared yet, you only hear their voices
 
     rosemi "Petra!!" 
-
-
     petra "Fweh?" 
-
     selen "Petra, where are you?!!" 
-
     nina "Petraaaa!!" 
 
     # bush leaves rustling sfx 
 
-    # petra Shocked
+    show petra shocked
     petra "... oh, they're looking for me!"
-
     nina "Hey, there's someone over there! Is that you, Petra?" 
 
-    # petra Default 
+    show petra default
     petra "Y-Yes! I'm here!" 
 
-    # reimu Default 
+    show reimu default
     reimu "...??"
 
     # bush leaves rustling sfx 
 
-    # Blocking: Nina sprite appears left of screen as Petra and Reimu’s sprites move to the right to make room
+    # Blocking: Nina sprite appears left of screen as Petra and Reimu's sprites move to the right to make room
     # Blocking: Nina's sprite is a bit further away from Petra and Reimu's sprites, here Petra and Reimu's sprites are on the right, Nina is on the far left
-    # nina Happy
+    show nina happy
     nina "Petra! There you are!" 
 
-    # nina Surprised
+    show nina surprised
     nina "... !!!" 
     nina "... i-is that??" 
     nina "No... it can't be..." 
     nina "... you left so long ago–" 
     nina "... Reimu? Is that really you?" 
 
-    # reimu surprised 
+    show reimu surprised
     reimu "... !!" 
 
-    # reimu Angry
+    show reimu angry
     # Reimu's sprite quickly moves close to Nina 
     reimu "Y-Yes! It's me! I'm Reimu!"
     reimu "You know me!?" 
     reimu "You really know me!? Can you tell me what happened?? Who am I? Where am I from?!" 
     reimu "Please tell me everything! I need to know!" 
 
-    # nina Worried 
+    show nina worried
     nina "E-Excuse me? Tell you? What are you talking about?"
     nina "Why do I need to tell you about yourself? Reimu, what happened?!" 
 
-    # reimu Sad 
+    show reimu sad
     reimu "..." 
-    reimu "... I can’t remember anything." 
+    reimu "... I can't remember anything." 
     reimu "My memories are gone..." 
 
-    # nina Default 
+    show nina default
     nina "..."
     nina "... your memories... are gone?" 
 
-    # nina Sad 
+    show nina sad
     nina "... I see…" 
 
-    # reimu Angry if Worried is unavailable 
+    show reimu worried
     reimu "You understand? So you'll help me?" 
 
     nina "... ..."
@@ -393,28 +393,26 @@ label intro_day_1_3:
     nina "... we... we were just acquaintances." 
     nina ".... we only met before once, so I don't know much about you other than your name." 
 
-    # reimu Surprised 
+    show reimu surprised
     reimu "No! No, no, no, that can't be!" 
 
-    # reimu Angry
+    show reimu angry
     reimu "Please, you're the only person that has ever recognised me! Please try to remember, you must know something! Anything!" 
 
-    # petra Anxious/Sad  
-    # nina Worried
-
+    show petra anxious
+    show nina worried
     petra "...!" 
-
     nina "Reimu, calm down!"
     nina "I know you're worried and confused right now, but it's going to be okay. Trust me, you'll remember everything in due time." 
 
-    # reimu Angry
+    show reimu angry
     reimu "And when is that?! Why not now!? Just tell me already!!" 
 
     # Nina's sprite moves closer to Reimu 
     nina "Listen, I can't give you the answers you want. You need to wait for the right time..."
 
-    reimu "The right time?! What do you mean by ''the right time''?! That doesn’t mean anything!!"
-    reimu "Why do I have to wait?! It’s been years!! I can't wait any longer! I won't wait!"
+    reimu "The right time?! What do you mean by ''the right time''?! That doesn't mean anything!!"
+    reimu "Why do I have to wait?! It's been years!! I can't wait any longer! I won't wait!"
 
     nina "Reimu please–" 
     selen "What's going on over there? Who's shouting?" 
@@ -422,94 +420,90 @@ label intro_day_1_3:
     rosemi "Petra! Nina! There you are." 
 
     # Blocking: Selen and Rosemi sprites appear on screen from the left, shuffle all other sprites right a little, pan out if necessary
-    # se Worried
-    # rosemi Worried
+    show selen worried
+    show rosemi worried
 
     selen "What's going on h-"
 
-    # se Shocked/Scared 
+    show selen shocked
     selen "... I-Is… Is that a g-g-ghost!?" 
     selen " ..." 
     selen "AAAAAAAAAAAAAAAAHH!!!" 
     # if possible Selen screaming sfx clip for the above dialogue
 
-
-    # rosemi Surprised/Shocked
-    # petra Shocked
-    # nina Surprised 
-    # reimu Neutral 
-
+    show rosemi shocked
+    show petra shocked
+    show nina surprised
+    show reimu default
     reimu "... Not again…" 
 
-    # Scene: Fade-in-Fade-out to Garden (night) BG
+    scene bg garden_night with fade
 
-    # petra Default 
-    # rosemi Default 
-    # se Default 
-    # reimu Default 
-    # nina Default 
-    # Blocking: Everyone is evenly spaced out, same placement order
+    show petra default at even5_slot1
+    show rosemi default at even5_slot2
+    show selen default at even5_slot3
+    show reimu default at even5_slot4
+    show nina default at even5_slot5
 
     selen "So what you're telling me is that you woke up as a ghost and you have no memories of your past life…" 
     reimu "Yes." 
     selen "So you've been wandering around the world looking for your memories?"
-    reimu "That’s right."
+    reimu "That's right."
     selen "And you stumbled into this facility after following the glowing flowers?" 
     reimu "Yeah…" 
     selen "... I see." 
     reimu "I swear I'm telling the truth, you have to believe me!" 
     selen "Yes, of course! We believe you! After all, this isn't even close to the weirdest thing I've ever heard."
     
-    # reimu Happy
+    show reimu happy
     reimu "Really!? Thank goodness! Can you tell me about these flowers?" 
 
     # se Puzzled/Confused 
-    # se Worried
+    show selen worried
     selen "The flowers?"
 
-    # reimu Sad 
+    show reimu sad
     reimu "Yes. I don't know why, but... these flowers feel familiar, like I'm supposed to know them..." 
     reimu "It felt like they were trying to show me something... which is why I followed them in the first place…" 
 
-    # reimu Default
-    # se Worried
+    show reimu sad
     selen "Hmm I don't know much about these flowers, but I think Rosemi should, right?" 
 
-    # rosemi Worried 
-    rosemi "Well, I don't know if this’ll be of much help, but these are Forget-Me-Nots. I found a patch of them in the forest behind the Rehab Center." 
+    show rosemi worried
+    rosemi "Well, I don't know if this'll be of much help, but these are Forget-Me-Nots. I found a patch of them in the forest behind the Rehab Center." 
     rosemi "I was on a stroll one night and they caught my eyes." 
 
-    # rosemi Happy 
+    show rosemi happy
     rosemi "They were so pretty, I wanted to show them to everyone else!"
 
-    # rosemi Distant
+    show rosemi distant
     rosemi "Especially one of our new residents... so I decided to pick a few and plant them in the garden." 
-    rosemi "And eventually, I’ve nurtured the first few to this huge patch." 
+    rosemi "And eventually, I've nurtured the first few to this huge patch." 
 
-    # petra Default 
+    show petra default
     petra "(For one of the new residents?)" 
 
-    # petra Thinking hard 
-    petra "(Hmm… I don’t think they’ve gotten any new residents in a while... The most recent one would be...)" 
+    show petra thinking
+    petra "(Hmm… I don't think they've gotten any new residents in a while... The most recent one would be...)" 
 
-    # petra Shocked
+    show petra shocked
     petra "(Me!?)" 
     petra "(Were these flowers... Planted for me?!)" 
     petra "..." 
 
     if prologue_rejection_flag:
-        # petra Anxious/Sad
+        show petra anxious
         petra "(I- Is this really all for me?)"
 
-        # petra Default
+        show petra default
         petra "(How do– What am I… A whole patch of flowers?)"
 
-        # petra Soft Sad Smile
+        show petra softsadsmile
         petra "(... I really have to stop overthinking everything.)"
         petra "(... I'll have to thank them later.)"
 
     else:
-        # petra Soft Sad Smile 
+        show petra softsadsmile
         petra "(You guys...)"
         petra "(And to think that I've been so anxious around them...)"
         petra "(... I'll have to thank them later.)"

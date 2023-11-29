@@ -5,7 +5,7 @@ label intro_day_1_good:
     petra "(Th-They actually like me…?)"
     petra "(I thought that they were just being nice cause it's their job…)"
 
-    show petra happy # petraSoft Sad Smile (if Happy is not available)
+    show petra softsadsmile
     petra "(Am… Am I more than just a liability to them…?)"
     petra "T-Thank you" 
     petra "For the present, I mean… A-And for everything else…"

@@ -222,10 +222,10 @@ label intro_day_1:
     # Scene: Rosemi Intro CG END 
 
     # TODO: equidistant spacing, left to right Rosemi, Selen, Nina, Petra
-    show rosemi default at slot1
-    show selen default at slot2
-    show nina excited at slot3
-    show petra default at slot4
+    show rosemi default at even4_slot1
+    show selen default at even4_slot2
+    show nina excited at even4_slot3
+    show petra default at even4_slot4
 
     nina "That sounds amazing!"
     

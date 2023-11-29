@@ -2,9 +2,8 @@
 
 label intro_day_1_2:
     #Scene: Fade into Hallway (day) BG 
-    #BGM Meet The Characters
-
-    scene bg hallway
+    play music "bgm/meet_the_characters.ogg"
+    scene bg hallway with fade
 
     # All 4 girls are on screen
     show selen happy at right
@@ -30,7 +29,7 @@ label intro_day_1_2:
     nina "Now that we're finally done with breakfast, let's get going."
     petra "... mhm." 
 
-    # Scene: Petra's Room (day) BG 
+    scene bg bedroom
 
     show petra thinking
     petra "(Like this… maybe?)"
@@ -45,12 +44,11 @@ label intro_day_1_2:
     show nina happy
     nina "Here, let me show you!"
 
-    # Extra dialog for choosing "I-I'm not a little kid, you know!"
     if prologue_rejection_flag:
-        # BGM stops
+        stop music fadeout 1.0
         # BGM ambience
 
-        show petra sad # anxious/sad
+        show petra anxious
         petra "... N-No! I-!!"
 
         show petra angry
@@ -74,6 +72,7 @@ label intro_day_1_2:
         petra "(I can do this myself!)"
 
         show petra default
+        play music "petra_theme.ogg" fadein 1.0
         # BGM Petra Character Theme
         petra "(I just need to... remember how to do this again...)"
 
@@ -110,8 +109,9 @@ label intro_day_1_2:
         petra "I'm sorry…"
         petra "L-Let's continue…"
 
-    # Scene: Fade-in-fade-out to Petra's Room (day) BG 
-    # BGM Meet The Characters
+
+    scene bg bedroom with fade
+    play music "bgm/meet_the_characters.ogg" fadein 1.0
 
     scene bg bedroom
 

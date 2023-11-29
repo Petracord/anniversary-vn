@@ -25,8 +25,8 @@ label intro_day_1_bad:
     petra "I know this is a rehab center and I'm only still adjusting to human society and all, but…"
     petra "But I don't need to be coddled!!"
 
-    # BGM stops
-    # Ambience sfx
+    stop music
+    stop sound
 
     show rosemi shocked # rosemi Surprised/Shocked
     rosemi "..." 
@@ -40,7 +40,7 @@ label intro_day_1_bad:
     show nina worried
     nina "What do you mean Petra? Is everything okay? Did we do something wrong?" 
 
-    # BGM Petra's Theme
+    play music "bgm/petra_theme.ogg"
     show petra annoyed
     petra "..." 
     petra "... I'm not a baby, don't treat me like one." 
@@ -99,7 +99,7 @@ label intro_day_1_bad:
     show nina default
     nina "But I'm glad we were able to clear up the miscommunication." 
 
-    show rosemi worried # rosemi Distant
+    show rosemi distant # rosemi Distant
     rosemi "So… Would you still like the present? It's okay if you don't."
 
     petra "(Do I still have the right to say yes after all that?)"

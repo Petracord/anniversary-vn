@@ -29,7 +29,7 @@ label intro_day_2:
 
     # Nina gasp sfx 
     nina "That's it." 
-    nina "You’re disowned." 
+    nina "You're disowned." 
 
     # Ptr Worried
     peter "Fweh?! Wait, what? Disowned??" 
@@ -58,7 +58,7 @@ label intro_day_2:
 
     # Pe Default
     # Ni Smug 
-    nina "Hmm? Did someone say anything? I couldn’t hear anything since I'm busy talking to my one and only Penguin baby." 
+    nina "Hmm? Did someone say anything? I couldn't hear anything since I'm busy talking to my one and only Penguin baby." 
     nina "Petra, did you say anything?"  
 
     # Pe Soft Sad Smile)
