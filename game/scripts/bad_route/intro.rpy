@@ -23,7 +23,7 @@ label angst_intro:
     nina "Petra?"
 
     # peter Worried 
-    peter "Hey! Stay grounded, Petra! Frost penguins don’t fly!"
+    peter "Hey! Stay grounded, Petra! Frost penguins don't fly!"
 
     # petra Shocked 
     petra "Fweh!?"
@@ -37,7 +37,7 @@ label angst_intro:
 
     # petra Default (looking away ver) 
     petra "(... really? Can I really...)" 
-    petra "(They must think I’m pathetic…)" 
+    petra "(They must think I'm pathetic…)" 
     petra "(What happens if I just refuse to do it…?)" 
 
     # petra Thinking Hard
@@ -52,33 +52,33 @@ label angst_intro:
     petra "Thanks, Nina…" 
 
     # petra Default (Shy)
-    petra "I’ll, uh… I’ll try to work something out."
+    petra "I'll, uh… I'll try to work something out."
 
     # petra Anxious/Sad
-    petra "I’m sure… um…"  
+    petra "I'm sure… um…"  
 
     # petra Sad
-    petra "(I don’t want to disappoint them either…)" 
-    petra "I promise I’ll work on it." 
+    petra "(I don't want to disappoint them either…)" 
+    petra "I promise I'll work on it." 
 
     # nina Worried
     nina "Oh, Honey… Hearing that is enough for me."
 
     # petra Default (Shy)
     # nina Default
-    nina "You’ve made a lot of progress already."
+    nina "You've made a lot of progress already."
     nina "Would you like some space to breathe?"
 
     # petra Default
-    petra "That’d be nice…" 
+    petra "That'd be nice…" 
 
     # nina Worried
     nina "Take all the time you need."
-    nina "I just know you’ll be able to do it."
+    nina "I just know you'll be able to do it."
 
     # petra Soft Sad Smile
     petra "(Will I? How?)" 
     petra "(How is one supposed to go about doing an absurd task like this?)" 
-    petra "(I can’t say no to Nina after that…)" 
+    petra "(I can't say no to Nina after that…)" 
     petra "Yes…" 
     petra "I will…" 
