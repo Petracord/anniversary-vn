@@ -1,5 +1,5 @@
 label intro_day_1_4:
-    show reimu surprised
+    show reimu surprised # missing
     reimu "You found them in the forest? Can you show me exactly where?!" 
 
     show petra default
@@ -13,7 +13,7 @@ label intro_day_1_4:
     show rosemi default
     rosemi "Actually, if you want I can accompany you to the forest, we can walk through my usual jogging routes, maybe that could give you some clues?" 
 
-    show reimu surprised
+    show reimu surprised # missing
     reimu "...!" 
     reimu "Really!? You'd do that for me?" 
 
@@ -21,7 +21,7 @@ label intro_day_1_4:
     rosemi "Of course! Why not? After all, it's my job to help people!" 
     rosemi "Though, I usually work with people who have very special needs... But it's fine! I'm sure helping you won't be any different!" 
 
-    show reimu confused
+    show reimu confused # missing
     reimu "Special needs?" 
     rosemi "Yeah, we mainly help special existences to–"
 
@@ -63,7 +63,7 @@ label intro_day_1_4:
     rosemi "Reimu, I have to ask you a very important question to decide how we can help you from here on." 
     rosemi "... how would you like to live as a human?" 
 
-    show reimu surprised
+    show reimu surprised # missing
     reimu "...?!"
     reimu "But... but I'm-!" 
     reimu "I'M ALREADY DEAD!!" 

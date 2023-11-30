@@ -36,7 +36,7 @@ label expression_test_petra:
     pause
     show petra terrified # missing
     pause
-    show petra scared # missing
+    show petra terrified # missing
     pause
 
     jump expression_test

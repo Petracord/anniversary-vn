@@ -130,7 +130,7 @@ label intro_day_1_2:
     show nina happy
     nina "Your primary task for this phase is to interact with other people, and through multiple positive interactions, form acquaintances with whom you'll foster mutually beneficial relationships." 
 
-    show petra confused
+    show petra confused # missing
     petra "...fweh??" 
 
     show nina excited
