@@ -51,7 +51,7 @@ label intro_day_1:
 
     show nina happy
 
-    nina "Are you ready? wanna grab breakfast together?" 
+    nina "Are you ready? Wanna grab breakfast together?" #fixed typo
     petra "..." 
     nina  "..."
     nina "It's okay, there's no rush~"
@@ -101,7 +101,7 @@ label intro_day_1:
     petra "(Nina is warm too)"
 
     scene bg hallway with fade
-    play music "ambient/clock_ticking.ogg" volume 0.5
+    play music "ambient/clock_ticking.ogg" volume 0.5 
 
     # flip sprites to face left
     show petra default at slightright
@@ -112,19 +112,24 @@ label intro_day_1:
 
     # Scene: Selen Intro CG START
     # Selen greeting sfx
+    scene cg selen_intro with fade #implemented Selen intro CG
+    hide nina
+    hide petra #hiding sprites for the sake of the CG
 
     selen "Good morning!" 
     nina "Good morning, Selen!" 
     petra "... good morning" 
 
-    # Scene: Selen Intro CG END. Return to Hallways (day) BG
-
     # Dog happy bark sfx or some other noise that could be used to express a cheerful ''good morning'' from a dragon
     ember "Gawr!!"
     
-    show nina happy at slightright
-
     nina "Haha, good morning to you too, Ember!"
+    
+    # Scene: Selen Intro CG END. Return to Hallways (day) BG
+    # Moved the end of the CG to after the dialogue and right before Selen sprite pops on screen
+    scene bg hallway with fade #transition back
+    show petra default at slightright
+    show nina default at outer_right #adding sprites back in after CG ends
 
     # add some proper offset
     show selen happy at slightleft
@@ -136,7 +141,7 @@ label intro_day_1:
     scene bg cafeteria with fade
 
     show petra default at center
-    show nina default at slightright
+    show nina happy at slightright #moved from within the cg to out
     show selen default at slightleft 
 
     nina "Alright Honey, anything else you'd like?"
@@ -208,7 +213,11 @@ label intro_day_1:
     show rosemi default 
     nina "Ooh, is that omurice? It looks so cute!"
 
-    show rosemi intro cg
+    scene cg rosemi_intro with fade #changed to display cg to replace bg
+    hide rosemi
+    hide nina
+    hide petra
+    hide selen #hiding all characters for CG
 
     # Scene: Rosemi Intro CG START
     rosemi "Close, it's Pomurice! It's like omurice…"
@@ -220,6 +229,7 @@ label intro_day_1:
     rosemi "I heard the theme for the dish was ''Forest Fairies''! Isn't that cute?"
 
     # Scene: Rosemi Intro CG END 
+    scene bg cafeteria with fade #transition back out of Rosemi CG
 
     # TODO: equidistant spacing, left to right Rosemi, Selen, Nina, Petra
     show rosemi default at even4_slot1
