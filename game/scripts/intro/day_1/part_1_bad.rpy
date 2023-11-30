@@ -1,8 +1,12 @@
 # Day 1, Part 1, Choice (b)
 
 label intro_day_1_bad:
+    show rosemi default at even4_slot1
+    show selen default at even4_slot2
+    show nina excited at even4_slot3
+    show petra default at even4_slot4
 
-    show petra confused
+    show petra confused # TODO: Which sprite
 
     petra "(I...)" 
     petra "(I mean, I guess they care about me? Is this really how they're trying to show it?? But...)"
@@ -40,7 +44,7 @@ label intro_day_1_bad:
     show nina worried
     nina "What do you mean Petra? Is everything okay? Did we do something wrong?" 
 
-    play music "bgm/petra_theme.ogg"
+    play music "bgm/petra_theme.ogg" fadein 0.5
     show petra annoyed
     petra "..." 
     petra "... I'm not a baby, don't treat me like one." 

@@ -245,7 +245,7 @@ label intro_day_1:
     show rosemi happy
     rosemi "Yes, please do! I'm sure you'll like it!"
 
-    show nina proud_mom
+    show nina proud
     nina "As expected of my son~ He really did become a pro chef!"
     nina "I'm so proud of him!"
 

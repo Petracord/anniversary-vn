@@ -1,31 +1,3 @@
-transform outer_left:
-    zoom 1.5
-    xcenter 0.1
-
-transform left:
-    zoom 1.5
-    xcenter 0.25
-
-transform slightleft:
-    zoom 1.5
-    xcenter 0.33
-
-transform center:
-    zoom 1.5
-    xcenter 0.5
-
-transform slightright:
-    zoom 1.5
-    xcenter 0.66
-
-transform right:
-    zoom 1.5
-    xcenter 0.75
-
-transform outer_right:
-    zoom 1.5
-    xcenter 0.9
-
 # Slots for evenly spacing out 4 characters on screen
 transform even4_slot1:
     zoom 1.5
@@ -63,3 +35,39 @@ transform even5_slot4:
 transform even5_slot5:
     zoom 1.2
     xcenter 0.83
+
+transform outer_left:
+    zoom 1.5
+    xcenter 0.1
+
+# miscelaneous positions 
+transform outer_left:
+    zoom 1.5
+    xanchor 0.0
+    xpos 0.1
+
+transform left:
+    zoom 1.5
+    xcenter 0.25
+
+transform slightleft:
+    zoom 1.5
+    xcenter 0.33
+
+transform center:
+    zoom 1.5
+    xcenter 0.5
+
+transform slightright:
+    zoom 1.5
+    xcenter 0.66
+
+transform right:
+    zoom 1.5
+    xcenter 0.75
+
+transform outer_right:
+    zoom 1.5
+    xanchor 1.0
+    xpos 0.9
+

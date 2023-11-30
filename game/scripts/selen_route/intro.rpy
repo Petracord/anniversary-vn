@@ -1,28 +1,29 @@
 label selen_intro:
-    # petra Default 
+    show petra default 
     petra "... I think I'll try talking to Selen." 
 
-    # nina Happy 
+    show nina happy
     nina "That's great! You can go up to her whenever you feel ready and talk about whatever you want." 
 
-    # petra Anxious/Sad 
+    show petra anxious
     petra "Are you sure that's okay?" 
 
-    # peter Smug 
+    show peter smug
     peter   "Don't worry, if she can deal with Ember everyday, she can deal with another annoyance." 
 
-    # petra Annoyed 
+    show petra annoyed
     petra "No one asked you!" 
 
-    # nina Surprised 
+    show nina surprised
     nina "You two really bring out entirely different sides in each other." 
 
-    # nina Happy 
+    show nina happy
     nina "Ignoring how he phrased it, what he meant to say was that you don't need to worry about being a bother."
     nina "The first step is always a bit scary, but you can do it!" 
 
-    # petra Default 
+    show petra default
     petra "... I guess you have a point." 
 
-    # petra Angry (Substitute for a determined look)
+    # (Substitute for a determined look)
+    show petra angry 
     petra "Okay, I got this!" 
