@@ -10,3 +10,23 @@ image nina serious = Image("images/sprites/nina/serious.webp", oversample = 2)
 image nina smug = Image("images/sprites/nina/smug.webp", oversample = 2)
 image nina surprised = Image("images/sprites/nina/surprised.webp", oversample = 2)
 image nina worried = Image("images/sprites/nina/Worried.webp", oversample = 2)
+
+label expression_test_nina:
+    show nina default at center
+    pause
+    show nina worried
+    pause
+    show nina happy
+    pause
+    show nina excited
+    pause
+    show nina smug
+    pause
+    show nina serious
+    pause
+    show nina proud
+    pause
+    show nina laugh
+    pause
+    
+    jump expression_test

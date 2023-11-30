@@ -8,3 +8,21 @@ image rosemi happy = Image("images/sprites/rosemi/happy.webp", oversample=2)
 image rosemi shocked_worried = Image("images/sprites/rosemi/shocked worry.webp", oversample=2)
 image rosemi shocked = Image("images/sprites/rosemi/shocked.webp", oversample=2)
 image rosemi worried = Image("images/sprites/rosemi/worried.webp", oversample=2)
+
+label expression_test_rosemi:
+    show rosemi default at center
+    pause
+    show rosemi shocked
+    pause
+    show rosemi worried
+    pause
+    show rosemi distant
+    pause
+    show rosemi excited
+    pause
+    show rosemi happy
+    pause
+    show rosemi smug # missing
+    pause
+
+    jump expression_test
