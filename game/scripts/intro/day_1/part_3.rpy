@@ -63,10 +63,8 @@ label intro_day_1_3:
 
     # walking sfx (still indoors, in the Rehab center)
 
-    scene bg garden_night with wipeleft
+    scene bg garden_night with fade
 
-    # Petra position?
-    
     petra "..." 
     # stepping on grass sfx 
     petra "(... such a nice breeze.)"
@@ -76,7 +74,11 @@ label intro_day_1_3:
     scene bg garden_night with fade
     # Blocking: Petra on left side, flip horizontally and back to make her look around
 
-    show petra default
+    show petra default at left
+    
+    # TODO animate this somehow
+    
+    show petra default at left
     petra "Hmm?"
     petra "(I don't think I've ever been to this part of the garden...)" 
 
@@ -342,7 +344,10 @@ label intro_day_1_3:
 
     # Blocking: Nina sprite appears left of screen as Petra and Reimu's sprites move to the right to make room
     # Blocking: Nina's sprite is a bit further away from Petra and Reimu's sprites, here Petra and Reimu's sprites are on the right, Nina is on the far left
-    show nina happy
+    show nina happy at left
+    show petra at slightright
+    show reimu at bump_right(200), outer_right
+
     nina "Petra! There you are!" 
 
     show nina surprised
@@ -355,7 +360,9 @@ label intro_day_1_3:
     show reimu surprised # missing
     reimu "... !!" 
 
-    show reimu angry
+    show reimu angry:
+        linear 0.25 xpos 0.7
+    
     # Reimu's sprite quickly moves close to Nina 
     reimu "Y-Yes! It's me! I'm Reimu!"
     reimu "You know me!?" 
@@ -420,8 +427,11 @@ label intro_day_1_3:
     rosemi "Petra! Nina! There you are." 
 
     # Blocking: Selen and Rosemi sprites appear on screen from the left, shuffle all other sprites right a little, pan out if necessary
-    show selen worried
-    show rosemi worried
+    show petra default at spread(5, 5)
+    show reimu angry at spread(5, 4)
+    show nina worried at spread(5, 3)
+    show selen worried at spread(5, 1)
+    show rosemi worried at spread(5, 2), rosemi_bump
 
     selen "What's going on h-"
 
@@ -439,11 +449,11 @@ label intro_day_1_3:
 
     scene bg garden_night with fade
 
-    show petra default at even5_slot1
-    show rosemi default at even5_slot2
-    show selen default at even5_slot3
-    show reimu default at even5_slot4
-    show nina default at even5_slot5
+    show petra default at spread(5, 1)
+    show reimu default at spread(5, 2)
+    show rosemi default at spread(5, 3), rosemi_bump
+    show selen default at spread(5, 4)
+    show nina default at spread(5, 5)
 
     selen "So what you're telling me is that you woke up as a ghost and you have no memories of your past life…" 
     reimu "Yes." 

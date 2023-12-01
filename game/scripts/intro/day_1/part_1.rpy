@@ -19,22 +19,23 @@ label intro_day_1:
     petra "(Well… Either way, I shouldn't stay in bed all day.)"
 
     # Put this over the animation instead?
-    play sound ["sfx/sheets_rustling.ogg", "<silence .5>", "sfx/door open.ogg"]
+    play sound ["sfx/sheets_rustling.mp3", "<silence .5>", "sfx/door open.mp3"]
     pause 5
 
     show bg bedroom with fade
 
-    play sound "sfx/door knock.ogg"
+    play sound "sfx/door knock.mp3"
     pause 2
 
     show petra default at left
     petra "Huh?!"
     petra "(Oh, it must be–)"
 
-    play sound "sfx/door open.ogg"
+    play sound "sfx/door open.mp3"
     pause 2
 
-    play music "bgm/meet_the_characters.ogg" fadein 1.0 volume 0.75
+    stop music
+    play music "bgm/meet_the_characters.mp3" fadein 1.0 volume 0.75
     show petra at left
     show nina excited at right
     
@@ -93,7 +94,7 @@ label intro_day_1:
     nina "Well, we've already told you this but you're free to roam the facility, any time you want."
     nina "This place is safe, no need to worry."
 
-    show petra soft_sad_smile
+    show petra softsadsmile
 
     petra " ... thanks... I'll think about it."
     nina "Of course, take your time, dear."
@@ -101,11 +102,11 @@ label intro_day_1:
     petra "(Nina is warm too)"
 
     scene bg hallway with fade
-    play music "ambient/clock_ticking.ogg" volume 0.5 
+    play sound "ambient/clock_ticking.mp3" volume 0.5 
 
     # flip sprites to face left
-    show petra default at slightright
-    show nina default at outer_right
+    show petra default at center, flip
+    show nina default at right
 
     mystery "Hey!" 
     mystery "Nina! Petra!" 
@@ -127,12 +128,12 @@ label intro_day_1:
     
     # Scene: Selen Intro CG END. Return to Hallways (day) BG
     # Moved the end of the CG to after the dialogue and right before Selen sprite pops on screen
-    scene bg hallway with fade #transition back
-    show petra default at slightright
-    show nina default at outer_right #adding sprites back in after CG ends
+    scene bg hallway with fade
+    show petra default at slightright, flip
+    show nina default at outer_right 
 
     # add some proper offset
-    show selen happy at slightleft
+    show selen happy at slightleft, flip
 
     selen "Have you two had breakfast yet?" 
     nina "Not yet, we're going to the cafeteria now!" 
@@ -141,8 +142,8 @@ label intro_day_1:
     scene bg cafeteria with fade
 
     show petra default at center
-    show nina happy at slightright #moved from within the cg to out
-    show selen default at slightleft 
+    show nina happy at right
+    show selen default at left, flip 
 
     nina "Alright Honey, anything else you'd like?"
     petra "Hmm..." 
@@ -157,7 +158,7 @@ label intro_day_1:
     
     petra "FWEEEHH??!!!"
 
-    show selen excited # missing
+    show selen excited
     show nina laugh
 
     # Nina laugh sfx
@@ -181,7 +182,7 @@ label intro_day_1:
 
     petra "..."
 
-    show petra soft_sad_smile
+    show petra softsadsmile
 
     petra "... I-it's fine…"
     petra "(Haaa… Even Ember's walking all over me… Did they pick me up as a rescue or as a doormat…?)"
@@ -192,9 +193,12 @@ label intro_day_1:
     mystery "Hey guys! Over here!"
     mystery "I saved a few seats!"
 
-    show selen default at center
-    show petra default at slightright
+    show selen default at center, flip
     show nina default at outer_right
+
+    # this works but "slightright, flip" makes petra huge so at this point i'll leave this untouched
+    show petra at slightright
+    show petra at flip
 
     # make all face left and move right
     nina "Aww Honey! Thank you!" 
@@ -205,7 +209,13 @@ label intro_day_1:
     # Rosemi greeting sfx
 
     # move in from left
-    show rosemi happy at outer_left
+    show rosemi happy:
+        zoom 1.5
+        yoffset -150
+        anchor (0.0, 0.65)
+        ypos 1.0
+        xpos -0.1
+        easein 0.5 xpos 0.1
 
     rosemi "Don't mention it"
 
@@ -213,11 +223,7 @@ label intro_day_1:
     show rosemi default 
     nina "Ooh, is that omurice? It looks so cute!"
 
-    scene cg rosemi_intro with fade #changed to display cg to replace bg
-    hide rosemi
-    hide nina
-    hide petra
-    hide selen #hiding all characters for CG
+    scene cg rosemi_intro with fade
 
     # Scene: Rosemi Intro CG START
     rosemi "Close, it's Pomurice! It's like omurice…"
@@ -232,10 +238,10 @@ label intro_day_1:
     scene bg cafeteria with fade #transition back out of Rosemi CG
 
     # TODO: equidistant spacing, left to right Rosemi, Selen, Nina, Petra
-    show rosemi default at even4_slot1
-    show selen default at even4_slot2
-    show nina excited at even4_slot3
-    show petra default at even4_slot4
+    show rosemi default at spread(4, 1), rosemi_bump
+    show selen default at spread(4, 2)
+    show nina excited at spread(4, 3)
+    show petra default at spread(4, 4)
 
     nina "That sounds amazing!"
     
