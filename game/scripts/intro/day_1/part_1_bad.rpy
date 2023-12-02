@@ -1,8 +1,12 @@
 # Day 1, Part 1, Choice (b)
 
 label intro_day_1_bad:
+    show rosemi default at even4_slot1
+    show selen default at even4_slot2
+    show nina excited at even4_slot3
+    show petra default at even4_slot4
 
-    show petra confused
+    show petra confused # missing # TODO: Which sprite
 
     petra "(I...)" 
     petra "(I mean, I guess they care about me? Is this really how they're trying to show it?? But...)"
@@ -40,7 +44,7 @@ label intro_day_1_bad:
     show nina worried
     nina "What do you mean Petra? Is everything okay? Did we do something wrong?" 
 
-    play music "bgm/petra_theme.ogg"
+    play music "bgm/petra_theme.ogg" fadein 0.5
     show petra annoyed
     petra "..." 
     petra "... I'm not a baby, don't treat me like one." 
@@ -48,7 +52,7 @@ label intro_day_1_bad:
     show nina surprised
     nina "... Petra?" 
 
-    show selen excited
+    show selen excited # missing
     selen "Haha! Oh, come on! Of course not! You're not a baby; we know that!" 
     selen "Why would we treat you like one? How did you even get that idea into your head?" 
 
@@ -58,7 +62,7 @@ label intro_day_1_bad:
     rosemi "Though I think that there might be some sort of misunderstanding going on here... " 
 
     show selen worried
-    show petra confused
+    show petra confused # missing
     petra "(A misunderstanding…?)"
 
     show nina worried
@@ -72,7 +76,7 @@ label intro_day_1_bad:
 
     selen "..." 
 
-    show selen sad
+    show selen sad # missing
     selen "I'm sorry Petra, it was partly my idea." 
     selen "Since Rosemi and I are always so busy, we don't really get to spend that much time with you, so I thought we could make it up to you with a present…" 
 
