@@ -1,10 +1,10 @@
 # Day 1, Part 1, Choice (b)
 
 label intro_day_1_bad:
-    show rosemi default at even4_slot1
-    show selen default at even4_slot2
-    show nina excited at even4_slot3
-    show petra default at even4_slot4
+    show rosemi default at spread(4, 1)
+    show selen default at spread(4, 2)
+    show nina excited at spread(4, 3)
+    show petra default at spread(4, 4)
 
     show petra shy
 
@@ -44,7 +44,7 @@ label intro_day_1_bad:
     show nina worried
     nina "What do you mean Petra? Is everything okay? Did we do something wrong?" 
 
-    play music "bgm/petra_theme.ogg" fadein 0.5
+    play music "bgm/petra_theme.mp3" fadein 0.5
     show petra annoyed
     petra "..." 
     petra "... I'm not a baby, don't treat me like one." 

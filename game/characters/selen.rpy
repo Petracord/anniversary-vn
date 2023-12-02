@@ -4,7 +4,8 @@ image selen happy = Image("images/sprites/selen/Happy.webp", oversample=2.05)
 image selen default = Image("images/sprites/selen/Neutral.webp", oversample=2.05)
 image selen shocked = Image("images/sprites/selen/Shocked.webp", oversample=2.05)
 image selen worried = Image("images/sprites/selen/Worried.webp", oversample=2.05)
-image selen excited = Image("images/sprites/selen/Excited.webp", oversample=2.05) # defined excited sprite
+image selen excited = Image("images/sprites/selen/Excited.webp", oversample=2.05)
+
 
 label expression_test_selen:
     show selen default at center

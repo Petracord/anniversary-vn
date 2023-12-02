@@ -2,14 +2,14 @@
 
 label intro_day_1_2:
     #Scene: Fade into Hallway (day) BG 
-    play music "bgm/meet_the_characters.ogg"
+    play music "bgm/meet_the_characters.mp3"
     scene bg hallway with fade
 
     # All 4 girls are on screen
-    show selen happy at right
-    show rosemi happy at slightright
-    show nina happy at outer_right
-    show petra default at left
+    show selen happy at spread(4, 1)
+    show rosemi happy at spread(4, 2), rosemi_bump
+    show nina happy at spread(4, 3)
+    show petra default at spread(4, 4)
 
     selen "Alright, I'm off to finish up some work."
     nina "Weren't you two supposed to have a day off today?"
@@ -31,7 +31,7 @@ label intro_day_1_2:
 
     scene bg bedroom
 
-    show petra thinking
+    show petra thinking at left
     petra "(Like this… maybe?)"
 
     show nina worried
@@ -72,8 +72,8 @@ label intro_day_1_2:
         petra "(I can do this myself!)"
 
         show petra default
-        play music "bgm/petra_theme.ogg" fadein 1.0 # added bgm/ to direct it to the right file
-        # BGM Petra Character Theme
+        
+        play music "bgm/petra_theme.mp3" fadein 1.0
         petra "(I just need to... remember how to do this again...)"
 
         show petra sad # anxious/sad
@@ -111,7 +111,7 @@ label intro_day_1_2:
 
 
     scene bg bedroom with fade
-    play music "bgm/meet_the_characters.ogg" fadein 1.0
+    play music "bgm/meet_the_characters.mp3" fadein 1.0
 
     scene bg bedroom
 

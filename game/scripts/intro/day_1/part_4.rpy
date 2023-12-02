@@ -33,34 +33,41 @@ label intro_day_1_4:
     # it should look like the three are huddled and having a small private chat 
     # the following dialogues are all in a smaller font to show that they are whispering, petra and Reimu are not listening to the convo 
 
-    # oh... this jibberish dialogue keeps crashing the code... that's uh, concerning, is there any fix, or do we have to rewrite?
-    show rosemi excited
-    # rosemi "{size=*0.5}$s^J& hear me out %#@ff$Gh^$jsH@*4&%$(#*sd4&^$ special existence?{/size}" 
+    show rosemi excited:
+        spread(5, 3)
+        linear 0.5 xoffset 100
 
-    show nina worried
-    # nina "{size=*0.5}#%HJf8Df(%^& ghost #@%$%** count &3*%(^*rk$^& an ''existence'' %^GJfi&f^%@*9.{/size}"
+    rosemi "{size=*0.5}$s^J& hear me out \%#@ff$Gh^$jsH@*4&\%$(#*sd4&^$ special existence?{/size}" 
+
+    show nina worried:
+        spread(5, 5)
+        linear 0.5 xoffset -100
+    nina "{size=*0.5}#\%HJf8Df(\%^& ghost #@\%$\%** count &3*\%(^*rk$^& an ''existence'' \%^GJfi&f^\%@*9.{/size}"
 
     show selen surprised
-    # selen "{size=*0.5}... %&^( are you suggesting%(^(%&(%(*^*^#$@$%$*?!{/size}" 
-    # rosemi "{size=*0.5}&%@*&%? #(*^#&#@&! $*^%^$^%#&**&)(^*$Rehab Center's resources.{/size}" 
-    # rosemi "{size=*0.5}@uB6#& come on, how often ^%&%$6dH=#^+*?*&%=1f5#&^ special existence!{/size}" 
-    # nina "{size=*0.5}$^*0&^G=3md$O&b(^$( would make it easier ^%4#.{/size}" 
+    selen "{size=*0.5}... \%&^( are you suggesting\%(^(\%&(\%(*^*^#$@$\%$*?!{/size}" 
+    rosemi "{size=*0.5}&\%@*&\%? #(*^#&#@&! $*^\%^$^\%#&**&)(^*$Rehab Center's resources.{/size}" 
+    rosemi "{size=*0.5}@uB6#& come on, how often ^\%&\%$6dH=#^+*?*&\%=1f5#&^ special existence!{/size}" 
+    nina "{size=*0.5}$^*0&^G=3md$O&b(^$( would make it easier ^\%4#.{/size}" 
 
     show selen worried
-    # selen "{size=*0.5}%*(*^yhg$kFio#3r7)hd#@.{/size}"
+    selen "{size=*0.5}\%*(*^yhg$kFio#3r7)hd#@.{/size}"
 
     show selen happy
-    # selen "{size=*0.5}@3^ worth a shot jKu4O)K*3&^%5$=#%&.{/size}" 
+    selen "{size=*0.5}@3^ worth a shot jKu4O)K*3&^\%5$=#\%&.{/size}" 
 
     show nina happy
     show rosemi happy
-    # nina "{size=*0.5}&%P*g4^0kP$*& Head Researcher ^%Hu@J$93*%.{/size}"
-    # rosemi "{size=*0.5}&%G38gO*#Obh&)jr37Ho20P$%^#=-3J*kd%30(u^%$^%& won't turn Reimu @^*W%5y*$.{/size}" 
-    # selen "{size=*0.5}$%E^K3r& go talk &j-%9#F%*)$@ if she's interested.{/size}" 
+    nina "{size=*0.5}&\%P*g4^0kP$*& Head Researcher ^\%Hu@J$93*\%.{/size}"
+    rosemi "{size=*0.5}&\%G38gO*#Obh&)jr37Ho20P$\%^#=-3J*kd\%30(u^\%$^\%& won't turn Reimu @^*W\%5y*$.{/size}" 
+    selen "{size=*0.5}$\%E^K3r& go talk &j-\%9#F\%*)$@ if she's interested.{/size}" 
 
     # Blocking: Rosemi, Reimu and Nina's sprites move back to the spots they were at before they became huddled together 
 
-    show rosemi happy
+    show rosemi happy:
+        linear 0.5 xoffset -100
+    show nina happy:
+        linear 0.5 xoffset 100
     rosemi "Reimu, I have to ask you a very important question to decide how we can help you from here on." 
     rosemi "... how would you like to live as a human?" 
 
@@ -74,10 +81,10 @@ label intro_day_1_4:
 
     scene bg bedroom_night with fade
 
-    show petra default at even4_slot1
-    show rosemi default at even4_slot2
-    show selen happy at even4_slot3
-    show nina happy at even4_slot4
+    show petra default at spread(4, 1)
+    show rosemi default at spread(4, 2)
+    show selen happy at spread(4, 3)
+    show nina happy at spread(4, 4)
 
     petra "(Hmm... should I tell them now?)"
     rosemi "Thank goodness that everything worked out with Reimu!" 

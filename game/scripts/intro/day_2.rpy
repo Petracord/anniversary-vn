@@ -91,7 +91,7 @@ label intro_day_2:
     petra "...?!!" 
     petra "(W-What? Where did that come from all of a sudden?!)"
 
-    show petra deadpan # fixed sprite
+    show petra deadpan
     petra "(Was it something I said...? No, I don't think so...)"
 
     show petra annoyed
