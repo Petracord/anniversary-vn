@@ -6,16 +6,17 @@ image selen shocked = Image("images/sprites/selen/Shocked.webp", oversample=2.05
 image selen worried = Image("images/sprites/selen/Worried.webp", oversample=2.05)
 image selen excited = Image("images/sprites/selen/Excited.webp", oversample=2.05)
 
+
 label expression_test_selen:
     show selen default at center
     pause
     show selen shocked
     pause
-    show selen excited # missing
+    show selen excited
     pause
     show selen worried
     pause
-    show selen sad # missing
+    show selen sad # won't be available
     pause
     show selen happy
     pause

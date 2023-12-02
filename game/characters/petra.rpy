@@ -34,11 +34,11 @@ label expression_test_petra:
     pause
     show petra deadpan
     pause
-    show petra confused # missing
+    show petra confused # this sprite won't be available for the demo
     pause
-    show petra terrified # missing
+    show petra scared # changed to scared
     pause
-    show petra terrified # missing
+    show petra terrified
     pause
 
     jump expression_test

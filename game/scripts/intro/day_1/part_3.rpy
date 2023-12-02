@@ -92,7 +92,7 @@ label intro_day_1_3:
     
     petra "Whoa it's... beautiful!" 
 
-    scene bg garden_night
+    # deleted to let glowing garden stay for a bit longer
 
     # not sure about this position just yet
     show petra thinking at right 
@@ -123,7 +123,7 @@ label intro_day_1_3:
 
     petra "(Wait is that a person?)"
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra "(Is that person... {i}Floating???{/i})"
     petra "(W-What!!?? Am I seeing things??)"
 
@@ -139,7 +139,7 @@ label intro_day_1_3:
     reimu "... where... am I?"
     # Blocking: Reimu's sprite moves a bit closer to the center, slowly (If you can make it slow that would be great but if you can't, that's fine). So the sprite is somewhere around center-left. 
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra "..."
 
     # Blocking: Petra's sprite shivers/shakes, should give the feeling that Petra is scared 
@@ -147,7 +147,7 @@ label intro_day_1_3:
 
     reimu "... these flowers, who planted them?"
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     
     # Blocking: Petra's sprite moves further right to the edge of the screen a bit of her sprite is off screen 
     # bush leaves rustling sfx (in time with her sprite moving) 
@@ -171,12 +171,12 @@ label intro_day_1_3:
 
     # Blocking: pan screen towards Petra, sprite is now center-right. 
 
-    show reimu surprised # missing
+    show reimu determined
     reimu "...!" 
     reimu "Was that a— Oh, a person!"
     # Blocking: Reimu's sprite moves to the center, close to Petra 
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra "(Oh no oh no oh no! She's coming towards me!!)" 
     # Blocking: Petra's sprite trembles 
 
@@ -193,7 +193,7 @@ label intro_day_1_3:
     reimu "... are you scared cause I'm a ghost?"
     reimu "You know, that's kinda rude…" 
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra "(... WHAT IS SHE ON ABOUT?? WHAT IS GOING ON??)" 
     reimu "Not all ghosts are bad." 
     petra "(NOT ALL GHOSTS?? ...THERE'S MORE???)" 
@@ -212,7 +212,7 @@ label intro_day_1_3:
 
     # Blocking: Reimu's sprite flips horizontally back and forth, as if she's looking around 
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra "(She's not doing anything to me? She really left me alone...?)"
 
     show petra anxious
@@ -273,7 +273,7 @@ label intro_day_1_3:
     show petra shocked
     petra "Fweeh?! Uhh, was I?!"
 
-    show petra terrified # missing
+    show petra terrified # should exist now
     petra " I-I'm s-s-sorry! I d-didn't mean to...!" 
 
     show reimu default
@@ -357,7 +357,7 @@ label intro_day_1_3:
     nina "... you left so long ago–" 
     nina "... Reimu? Is that really you?" 
 
-    show reimu surprised # missing
+    show reimu determined
     reimu "... !!" 
 
     show reimu angry:
@@ -382,10 +382,10 @@ label intro_day_1_3:
     nina "..."
     nina "... your memories... are gone?" 
 
-    show nina sad
+    show nina worried
     nina "... I see…" 
 
-    show reimu worried
+    show reimu sad
     reimu "You understand? So you'll help me?" 
 
     nina "... ..."
@@ -400,7 +400,7 @@ label intro_day_1_3:
     nina "... we... we were just acquaintances." 
     nina ".... we only met before once, so I don't know much about you other than your name." 
 
-    show reimu surprised # missing
+    show reimu angry
     reimu "No! No, no, no, that can't be!" 
 
     show reimu angry

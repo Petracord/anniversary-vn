@@ -142,7 +142,7 @@ label intro_day_2:
     show peter angry
     peter "Well, you are annoying, but that doesn't mean I won't help."
 
-    show peter happy # missing
+    show peter smug
     peter "Besides, is it too far-fetched to think that I might decide to help you out here and there?" 
 
     show petra annoyed

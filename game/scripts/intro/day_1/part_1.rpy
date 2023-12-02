@@ -255,7 +255,7 @@ label intro_day_1:
     nina "As expected of my son~ He really did become a pro chef!"
     nina "I'm so proud of him!"
 
-    show selen excited # missing
+    show selen excited
     # selenLaugh sfx
     selen "Haha, yeah, he wasn't joking!"
 
@@ -277,7 +277,7 @@ label intro_day_1:
     rosemi "But I'm still not used to seeing him in the kitchen staff uniform." 
     rosemi "It was quite the surprise the first time I saw him like that!" 
 
-    show selen excited # missing
+    show selen excited
     selen "Haha, same here!" 
     selen "It was a surprise for sure!" 
 
@@ -291,7 +291,7 @@ label intro_day_1:
     show nina smug
     nina "Ooh right, we do have one~" 
 
-    show rosemi smug # missing
+    show rosemi excited
     rosemi "Yep, I think it's time!" 
 
     show petra shocked
