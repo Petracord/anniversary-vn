@@ -38,7 +38,7 @@ label intro_day_1_good:
     petra "I see" 
     petra "(It's that warm feeling again)"
 
-    show petra soft_sad_smile
+    show petra softsadsmile # sprite name correction
     petra "... Thanks…"
 
     show rosemi excited

@@ -19,7 +19,7 @@ label expression_test_peter:
     pause
     show peter angry
     pause
-    show peter happy # missing
+    show peter happy # this sprite won't be available for the demo
     pause
 
     jump expression_test

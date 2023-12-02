@@ -12,7 +12,7 @@ image reimu smile = Image("sprites/reimu/smile (hat & bracelet) .webp", oversamp
 label expression_test_reimu:
     show reimu default at center
     pause
-    show reimu surprised # missing
+    show reimu surprised # this sprite won't be available for the demo
     pause
     show reimu angry
     pause
@@ -26,7 +26,7 @@ label expression_test_reimu:
     pause
     show reimu smile
     pause
-    show reimu confused # missing
+    show reimu confused # this sprite won't be available for the demo
     pause
 
     jump expression_test

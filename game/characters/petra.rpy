@@ -10,6 +10,8 @@ image petra shocked = Image("images/sprites/petra/shocked.webp", oversample=2.2)
 image petra shy = Image("images/sprites/petra/shy.webp", oversample=2.2)
 image petra softsadsmile = Image("images/sprites/petra/softsadsmile.webp", oversample=2.2)
 image petra thinking = Image("images/sprites/petra/thinking.webp", oversample=2.2)
+image petra scared = Image("images/sprites/petra/scared.webp", oversample=2.2) # defined sprites
+image petra terrified = Image("images/sprites/petra/terrified.webp", oversample=2.2)
 
 label expression_test_petra:
     show petra default at center
@@ -32,11 +34,11 @@ label expression_test_petra:
     pause
     show petra deadpan
     pause
-    show petra confused # missing
+    show petra confused # this sprite won't be available for the demo
     pause
-    show petra terrified # missing
+    show petra scared # changed to scared
     pause
-    show petra terrified # missing
+    show petra terrified
     pause
 
     jump expression_test

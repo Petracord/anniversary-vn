@@ -1,5 +1,5 @@
 label intro_day_1_4:
-    show reimu surprised # missing
+    show reimu determined
     reimu "You found them in the forest? Can you show me exactly where?!" 
 
     show petra default
@@ -13,7 +13,7 @@ label intro_day_1_4:
     show rosemi default
     rosemi "Actually, if you want I can accompany you to the forest, we can walk through my usual jogging routes, maybe that could give you some clues?" 
 
-    show reimu surprised # missing
+    show reimu happy
     reimu "...!" 
     reimu "Really!? You'd do that for me?" 
 
@@ -21,7 +21,7 @@ label intro_day_1_4:
     rosemi "Of course! Why not? After all, it's my job to help people!" 
     rosemi "Though, I usually work with people who have very special needs... But it's fine! I'm sure helping you won't be any different!" 
 
-    show reimu confused # missing
+    show reimu default
     reimu "Special needs?" 
     rosemi "Yeah, we mainly help special existences to–"
 
@@ -33,29 +33,30 @@ label intro_day_1_4:
     # it should look like the three are huddled and having a small private chat 
     # the following dialogues are all in a smaller font to show that they are whispering, petra and Reimu are not listening to the convo 
 
+    # oh... this jibberish dialogue keeps crashing the code... that's uh, concerning, is there any fix, or do we have to rewrite?
     show rosemi excited
-    rosemi "{size=*0.5}$s^J& hear me out %#@ff$Gh^$jsH@*4&%$(#*sd4&^$ special existence?{/size}" 
+    # rosemi "{size=*0.5}$s^J& hear me out %#@ff$Gh^$jsH@*4&%$(#*sd4&^$ special existence?{/size}" 
 
     show nina worried
-    nina "{size=*0.5}#%HJf8Df(%^& ghost #@%$%** count &3*%(^*rk$^& an ''existence'' %^GJfi&f^%@*9.{/size}"
+    # nina "{size=*0.5}#%HJf8Df(%^& ghost #@%$%** count &3*%(^*rk$^& an ''existence'' %^GJfi&f^%@*9.{/size}"
 
     show selen surprised
-    selen "{size=*0.5}... %&^( are you suggesting%(^(%&(%(*^*^#$@$%$*?!{/size}" 
-    rosemi "{size=*0.5}&%@*&%? #(*^#&#@&! $*^%^$^%#&**&)(^*$Rehab Center's resources.{/size}" 
-    rosemi "{size=*0.5}@uB6#& come on, how often ^%&%$6dH=#^+*?*&%=1f5#&^ special existence!{/size}" 
-    nina "{size=*0.5}$^*0&^G=3md$O&b(^$( would make it easier ^%4#.{/size}" 
+    # selen "{size=*0.5}... %&^( are you suggesting%(^(%&(%(*^*^#$@$%$*?!{/size}" 
+    # rosemi "{size=*0.5}&%@*&%? #(*^#&#@&! $*^%^$^%#&**&)(^*$Rehab Center's resources.{/size}" 
+    # rosemi "{size=*0.5}@uB6#& come on, how often ^%&%$6dH=#^+*?*&%=1f5#&^ special existence!{/size}" 
+    # nina "{size=*0.5}$^*0&^G=3md$O&b(^$( would make it easier ^%4#.{/size}" 
 
     show selen worried
-    selen "{size=*0.5}%*(*^yhg$kFio#3r7)hd#@.{/size}"
+    # selen "{size=*0.5}%*(*^yhg$kFio#3r7)hd#@.{/size}"
 
     show selen happy
-    selen "{size=*0.5}@3^ worth a shot jKu4O)K*3&^%5$=#%&.{/size}" 
+    # selen "{size=*0.5}@3^ worth a shot jKu4O)K*3&^%5$=#%&.{/size}" 
 
     show nina happy
     show rosemi happy
-    nina "{size=*0.5}&%P*g4^0kP$*& Head Researcher ^%Hu@J$93*%.{/size}"
-    rosemi "{size=*0.5}&%G38gO*#Obh&)jr37Ho20P$%^#=-3J*kd%30(u^%$^%& won't turn Reimu @^*W%5y*$.{/size}" 
-    selen "{size=*0.5}$%E^K3r& go talk &j-%9#F%*)$@ if she's interested.{/size}" 
+    # nina "{size=*0.5}&%P*g4^0kP$*& Head Researcher ^%Hu@J$93*%.{/size}"
+    # rosemi "{size=*0.5}&%G38gO*#Obh&)jr37Ho20P$%^#=-3J*kd%30(u^%$^%& won't turn Reimu @^*W%5y*$.{/size}" 
+    # selen "{size=*0.5}$%E^K3r& go talk &j-%9#F%*)$@ if she's interested.{/size}" 
 
     # Blocking: Rosemi, Reimu and Nina's sprites move back to the spots they were at before they became huddled together 
 
@@ -63,7 +64,7 @@ label intro_day_1_4:
     rosemi "Reimu, I have to ask you a very important question to decide how we can help you from here on." 
     rosemi "... how would you like to live as a human?" 
 
-    show reimu surprised # missing
+    show reimu angry
     reimu "...?!"
     reimu "But... but I'm-!" 
     reimu "I'M ALREADY DEAD!!" 
@@ -157,7 +158,7 @@ label intro_day_1_4:
     petra "We all got pretty caught up with Reimu." 
     rosemi "Yeah..." 
 
-    show rosemi smile
+    show rosemi default
     rosemi "Hmm… Actually, if it's fine with you, do you want to go see them again tomorrow? They should be in bloom for a few more nights."
 
     show petra softsadsmile
@@ -198,6 +199,9 @@ label intro_day_1_4:
     # Can we insert a ''Flashback'' here? Like show screenshots or images of previous scenes throughout the day? I was thinking of screenshots of the time Nina greeted Petra in the morning, screenshot of the moment where Ember was nibbling on her fish hair clip, all of them having breakfast together, then Petra seeing the flower patch present. It's supposed to be like, Petra suddenly remembering good memories, thinking about her own set of memories she doesn't want to forget.
     # Day 1 Scene Montage
     # I'll see if I can cut something together
+    
+    # Update, I don't think I'll be able to cut something together before Petra's 
+    # birthday since we'd need footage from an otherwise finished demo
 
     # flash back end, back to petra's room (night) BG
 

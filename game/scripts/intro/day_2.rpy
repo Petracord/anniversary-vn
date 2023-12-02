@@ -91,7 +91,7 @@ label intro_day_2:
     petra "...?!!" 
     petra "(W-What? Where did that come from all of a sudden?!)"
 
-    show petra deadpan stare
+    show petra deadpan # fixed sprite
     petra "(Was it something I said...? No, I don't think so...)"
 
     show petra annoyed
@@ -142,7 +142,7 @@ label intro_day_2:
     show peter angry
     peter "Well, you are annoying, but that doesn't mean I won't help."
 
-    show peter happy # missing
+    show peter smug
     peter "Besides, is it too far-fetched to think that I might decide to help you out here and there?" 
 
     show petra annoyed

@@ -22,7 +22,7 @@ label expression_test_rosemi:
     pause
     show rosemi happy
     pause
-    show rosemi smug # missing
+    show rosemi smug # this sprite won't be available for the demo
     pause
 
     jump expression_test

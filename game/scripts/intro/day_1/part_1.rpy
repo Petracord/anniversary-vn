@@ -93,7 +93,7 @@ label intro_day_1:
     nina "Well, we've already told you this but you're free to roam the facility, any time you want."
     nina "This place is safe, no need to worry."
 
-    show petra soft_sad_smile
+    show petra softsadsmile #sprite name correction
 
     petra " ... thanks... I'll think about it."
     nina "Of course, take your time, dear."
@@ -157,7 +157,7 @@ label intro_day_1:
     
     petra "FWEEEHH??!!!"
 
-    show selen excited # missing
+    show selen excited
     show nina laugh
 
     # Nina laugh sfx
@@ -181,7 +181,7 @@ label intro_day_1:
 
     petra "..."
 
-    show petra soft_sad_smile
+    show petra softsadsmile #sprite name correction
 
     petra "... I-it's fine…"
     petra "(Haaa… Even Ember's walking all over me… Did they pick me up as a rescue or as a doormat…?)"
@@ -249,7 +249,7 @@ label intro_day_1:
     nina "As expected of my son~ He really did become a pro chef!"
     nina "I'm so proud of him!"
 
-    show selen excited # missing
+    show selen excited
     # selenLaugh sfx
     selen "Haha, yeah, he wasn't joking!"
 
@@ -271,7 +271,7 @@ label intro_day_1:
     rosemi "But I'm still not used to seeing him in the kitchen staff uniform." 
     rosemi "It was quite the surprise the first time I saw him like that!" 
 
-    show selen excited # missing
+    show selen excited
     selen "Haha, same here!" 
     selen "It was a surprise for sure!" 
 
@@ -285,7 +285,7 @@ label intro_day_1:
     show nina smug
     nina "Ooh right, we do have one~" 
 
-    show rosemi smug # missing
+    show rosemi excited
     rosemi "Yep, I think it's time!" 
 
     show petra shocked

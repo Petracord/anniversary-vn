@@ -72,7 +72,7 @@ label intro_day_1_2:
         petra "(I can do this myself!)"
 
         show petra default
-        play music "petra_theme.ogg" fadein 1.0
+        play music "bgm/petra_theme.ogg" fadein 1.0 # added bgm/ to direct it to the right file
         # BGM Petra Character Theme
         petra "(I just need to... remember how to do this again...)"
 
@@ -130,7 +130,7 @@ label intro_day_1_2:
     show nina happy
     nina "Your primary task for this phase is to interact with other people, and through multiple positive interactions, form acquaintances with whom you'll foster mutually beneficial relationships." 
 
-    show petra confused # missing
+    show petra anxious
     petra "...fweh??" 
 
     show nina excited
