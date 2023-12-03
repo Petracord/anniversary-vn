@@ -6,7 +6,7 @@ label rosemi_intro:
     nina "That's great! You can go up to her whenever you feel ready and talk about whatever you want."
 
     # looking away version
-    show default shy
+    show default
     petra "(Is that really okay?)" 
 
     show petra default

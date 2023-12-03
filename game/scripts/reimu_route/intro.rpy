@@ -16,7 +16,7 @@ label reimu_intro:
     show petra annoyed
     petra "(Haa! There he goes again with the senpai thing.)"
 
-    show petra deadpan stare
+    show petra deadpan
     petra "(Nina said that he's usually joking, but is his sense of humor really this broken? Should we be worried?)"
 
     # replace with determined

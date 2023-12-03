@@ -35,7 +35,7 @@ label intro_day_1:
     pause 2
 
     stop music
-    play music "bgm/meet_the_characters.mp3" fadein 1.0 volume 0.75
+    play music "bgm/meet_the_characters.mp3" fadein 1.0 volume 0.75 #this isn't playing for me for some reason when I run it
     show petra at left
     show nina excited at right
     
@@ -102,7 +102,7 @@ label intro_day_1:
     petra "(Nina is warm too)"
 
     scene bg hallway with fade
-    play sound "ambient/clock_ticking.mp3" volume 0.5 
+    play sound "ambient/clock_ticking.mp3" volume 0.5 # this sound effect is getting cut short too after playing for a breif moment
 
     # flip sprites to face left
     show petra default at center, flip
@@ -345,4 +345,5 @@ label intro_day_1:
         # This option does not increase or decrease Petra's affection with any character either, but it does change what dialogue appears in future scenes! The dialogues triggered by this option are in [Day 1, part 1.b].
         "I-I'm not a little kid, you know!":
             $ prologue_rejection_flag = True
-            jump intro_day_1_bad
+            jump intro_day_1_bad # Petra's theme in day 1 bad also has issues cause it starts playing and then immediately stops
+                                # it might just be something on my end, as long as it works for you, it's probably fine
