@@ -44,7 +44,7 @@ label intro_day_1_4:
         linear 0.5 xoffset -100
     nina "{size=*0.5}#\%HJf8Df(\%^& ghost #@\%$\%** count &3*\%(^*rk$^& an ''existence'' \%^GJfi&f^\%@*9.{/size}"
 
-    show selen surprised
+    show selen shocked
     selen "{size=*0.5}... \%&^( are you suggesting\%(^(\%&(\%(*^*^#$@$\%$*?!{/size}" 
     rosemi "{size=*0.5}&\%@*&\%? #(*^#&#@&! $*^\%^$^\%#&**&)(^*$Rehab Center's resources.{/size}" 
     rosemi "{size=*0.5}@uB6#& come on, how often ^\%&\%$6dH=#^+*?*&\%=1f5#&^ special existence!{/size}" 
