@@ -77,7 +77,7 @@ label intro_day_1_bad:
     selen "..." 
 
     # just keep it as worried
-    selen "I'm sorry Petra, it was partly my idea." 
+    selen "I'm sorry, Petra. It was partly my idea." 
     selen "Since Rosemi and I are always so busy, we don't really get to spend that much time with you, so I thought we could make it up to you with a present…" 
 
     show petra shocked 

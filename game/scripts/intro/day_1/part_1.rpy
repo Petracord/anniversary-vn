@@ -65,7 +65,7 @@ label intro_day_1:
 
     show nina happy
 
-    nina "Oh guess what, Honey, I heard the cafeteria is serving toast and omurice for breakfast today"
+    nina "Oh, guess what, Honey, I heard the cafeteria is serving toast and omurice for breakfast today."
     nina "Mmm… Nothing beats good old toast with eggs, right?" 
 
     petra "..."
@@ -119,7 +119,7 @@ label intro_day_1:
 
     selen "Good morning!" 
     nina "Good morning, Selen!" 
-    petra "... good morning" 
+    petra "... good morning." 
 
     # Dog happy bark sfx or some other noise that could be used to express a cheerful ''good morning'' from a dragon
     ember "Gawr!!"
@@ -169,8 +169,8 @@ label intro_day_1:
     show nina happy
     show selen happy
 
-    nina "That's right, Ember please pick a food from the table not from Petra's hair"
-    ember "Oouuff" 
+    nina "That's right, Ember please pick a food from the table not from Petra's hair."
+    ember "Oouuff..." 
 
     # Dog whimpering sfx
 
@@ -230,7 +230,7 @@ label intro_day_1:
     rosemi "But better!"
 
     # Rosemi laugh sfx
-    rosemi "The omelet is fluffy and cooked just right" 
+    rosemi "The omelet is fluffy and cooked just right!" 
     rosemi "The rice tastes great and the garnish is so pretty~"
     rosemi "I heard the theme for the dish was ''Forest Fairies''! Isn't that cute?"
 
@@ -305,7 +305,7 @@ label intro_day_1:
     petra "(A present…?)"
 
     show nina happy
-    nina "Well it's more like Rosemi made the present, and we just helped."
+    nina "Well, it's more like Rosemi made the present, and we just helped."
 
     show rosemi worried
     rosemi "Nooo! Don't say that! We worked on this together!" 
@@ -324,15 +324,15 @@ label intro_day_1:
     nina "Of course Honey! You've been such a dear and an absolute joy to work with!" 
 
     show nina happy
-    nina "You deserve a present" 
+    nina "You deserve a present." 
 
-    selen "We're glad to have you here Petra. Is that so surprising?" 
+    selen "We're glad to have you here, Petra. Is that so surprising?" 
 
     show petra default
     petra "(Th-They got me a present…?)"
     petra "I-I- ..."
     petra "(What could they have gotten me?)"
-    petra "(What kind of present do you even get for… a one-month anniversary… at a rehab center…?"
+    petra "(What kind of present do you even get for… a one-month anniversary… at a rehab center…?)"
     petra "(I don't know what to say…)"
 
     # Choice Screen 

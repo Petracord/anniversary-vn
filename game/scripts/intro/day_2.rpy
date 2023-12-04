@@ -208,7 +208,7 @@ label intro_day_2:
     petra "(Hmm… Or not? Am I thinking too much about this?)" 
 
     show peter angry
-    petra "Hey! Earth to Petra! Are you still here?" 
+    Peter "Hey! Earth to Petra! Are you still here?" 
 
     show petra shocked
     petra "Fweh-?" 
