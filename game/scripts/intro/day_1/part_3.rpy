@@ -4,9 +4,9 @@ label intro_day_1_3:
     show petra default at left
     # Yawn SFX
     petra "It's already night?" 
-    petra "I didn't even notice... Well, at least I'm done studying everything Nina told me to" 
+    petra "I didn't even notice... Well, at least I'm done studying everything Nina told me to." 
 
-    petra "I guess now I'm free for the entire day tomorrow" 
+    petra "I guess now I'm free for the entire day tomorrow." 
     petra "..." 
     petra "(What Nina said… I still can't stop thinking about it….)" 
     petra "(Make friends? She makes it sound so easy...)" 
@@ -14,12 +14,12 @@ label intro_day_1_3:
     petra "(I didn't even know it was a skill that you have to actively hone…)"
     petra "(... and I still don't even know how to talk to people properly.)"
     petra "(I've hardly been able to express myself at all... whatever happens, I just go along with it...)"
-    petra "(Is this really okay? I don't even feel like I'm ready for something like this..)"
+    petra "(Is this really okay? I don't even feel like I'm ready for something like this..)."
     petra "(What if I don't agree to do the task? What happens then?)"
-    petra "(... I hopetra nothing bad..)"
+    petra "(... I hope nothing bad...)"
     petra "(No, no… I'm being pessimistic again... I need to stop thinking like this.)"
-    petra "(But I don't know... am I really supposed to just go up to people and talk to them?? And just like that they'll become my friend??)" 
-    petra "That sounds... stupid" 
+    petra "(But I don't know... am I really supposed to just go up to people and talk to them?? And just like that, they'll become my friend??)" 
+    petra "That sounds... stupid." 
     petra "..." 
     
     show petra sad
@@ -28,11 +28,11 @@ label intro_day_1_3:
     petra "..."
 
     show petra shy
-    petra "... Ugh I feel tired just thinking about all of these things." 
+    petra "... Ugh, I feel tired just thinking about all of these things." 
     petra "(I'll think about this later...)" 
 
     show petra default
-    petra "I need to clear my mind, I'll read a book."
+    petra "I just need to clear my mind... Maybe with some light reading."
 
     scene bg bedroom_night with fade
     show petra default at left
@@ -43,8 +43,8 @@ label intro_day_1_3:
     petra "That was a good read." 
 
     show petra default
-    petra "(Hmm how long have I been reading?)"
-    petra "Oh it's almost time for the present reveal!"
+    petra "(Hmm... how long have I been reading?)"
+    petra "Oh, it's almost time for the present reveal!"
 
     if prologue_rejection_flag:
         petra "I-I better get going... I don't want to cause more trouble..." 
@@ -55,11 +55,11 @@ label intro_day_1_3:
     # Blocking: Petra sprite moving across the screen from left to right
 
     show petra shy
-    petra "(Hmm it's been a few minutes. They're late.)"
+    petra "(Hmm... it's been a few minutes. They're late.)"
     
     show petra default
-    petra "Hmm, it's a pleasant night."
-    petra "(They'll be here soon anyways, I might as well take a stroll.)"
+    petra "Hmm... it's a pleasant night."
+    petra "(They'll be here soon anyway, so I guess I might as well take a stroll.)"
 
     # walking sfx (still indoors, in the Rehab center)
 
@@ -99,7 +99,7 @@ label intro_day_1_3:
     petra "(Are flowers supposed to glow? I'm not sure...)" 
 
     show petra softsadsmile
-    petra "(But it's so pretty... such a soft gentle glow)"
+    petra "(But it's so pretty... such a soft, gentle glow.)"
     petra "(It's just like...)" 
     petra "The auroras back home... " 
 
@@ -121,7 +121,7 @@ label intro_day_1_3:
 
     show reimu default at outer_left
 
-    petra "(Wait is that a person?)"
+    petra "(Wait, is that a person?)"
 
     show petra terrified # should exist now
     petra "(Is that person... {i}Floating???{/i})"
@@ -219,7 +219,7 @@ label intro_day_1_3:
     petra "(Well, she did say she wouldn't hurt me... And she even asked if I was okay.)"
 
     show petra thinking
-    petra "(And not to mention, if she really wanted to hurt me she would have done that by now.)"
+    petra "(And not to mention, if she really wanted to hurt me, she would have done that by now.)"
 
     show petra default
     petra "(I guess there is some truth to what she's saying…)"
@@ -311,7 +311,7 @@ label intro_day_1_3:
     reimu "They feel familiar! I don't know why but I feel comfortable when I see them." 
 
     show reimu sad
-    reimu "... it's soft gentle glow... reminds me of home." 
+    reimu "... it's soft, gentle glow... reminds me of home." 
     reimu "Hah, even though I can't even remember my home... but it just feels like it... I don't know how to explain it." 
 
     show petra default
@@ -378,7 +378,6 @@ label intro_day_1_3:
     reimu "... I can't remember anything." 
     reimu "My memories are gone..." 
 
-    show nina default
     nina "..."
     nina "... your memories... are gone?" 
 
@@ -477,7 +476,7 @@ label intro_day_1_3:
     reimu "It felt like they were trying to show me something... which is why I followed them in the first place…" 
 
     show reimu sad
-    selen "Hmm I don't know much about these flowers, but I think Rosemi should, right?" 
+    selen "Hmm... I don't know much about these flowers, but I think Rosemi should, right?" 
 
     show rosemi worried
     rosemi "Well, I don't know if this'll be of much help, but these are Forget-Me-Nots. I found a patch of them in the forest behind the Rehab Center." 

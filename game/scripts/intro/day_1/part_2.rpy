@@ -20,7 +20,7 @@ label intro_day_1_2:
     rosemi "We can have our day off once we're done."
     nina "I see… Good luck, you two!"
     petra "G-Good luck." 
-    rosemi "You too Petra! Good luck with your studies" 
+    rosemi "You too, Petra! Good luck with your studies." 
     selen "Catch ya later!" 
 
     hide selen
@@ -32,6 +32,7 @@ label intro_day_1_2:
     scene bg bedroom
 
     show petra thinking at left
+    show nina default at right
     petra "(Like this… maybe?)"
 
     show nina worried
@@ -115,7 +116,7 @@ label intro_day_1_2:
 
     scene bg bedroom
 
-    show petra sad at left
+    show petra sad at shy
     show nina happy at right
     nina "Good job, Petra! You're learning pretty fast" 
     nina "Your academic progress is on track with our schedule, and your communication skills have improved a lot!" 

@@ -71,13 +71,13 @@ label intro_day_1_4:
     rosemi "Reimu, I have to ask you a very important question to decide how we can help you from here on." 
     rosemi "... how would you like to live as a human?" 
 
-    show reimu angry
+    show reimu determined
     reimu "...?!"
     reimu "But... but I'm-!" 
     reimu "I'M ALREADY DEAD!!" 
 
     show petra deadpan
-    petra "... I bet she tells that to all her ''special'' girls." 
+    petra "(... I bet she tells that to all her ''special'' girls.)" 
 
     scene bg bedroom_night with fade
 
@@ -109,7 +109,7 @@ label intro_day_1_4:
     show selen happy
     selen "Thanks, speaking of which, we should get to sleep." 
 
-    nina "Yep, it's getting late and we shouldn't keep Petra up any longer." 
+    nina "Yep, it's getting late, and we shouldn't keep Petra up any longer." 
 
     show petra shocked
     petra "(Ah, they're leaving!)" 
@@ -133,7 +133,7 @@ label intro_day_1_4:
 
     show petra shy
     petra "Well... I want to– s-say–"
-    petra "(Geez stop fumbling– Just say it!)"
+    petra "(Geez, stop fumbling– Just say it!)"
     petra "I was thinking... you know... about the present."
 
     show petra default
@@ -171,10 +171,10 @@ label intro_day_1_4:
     show petra softsadsmile
     petra "... sure." 
 
-    rosemi "And you two are coming along too right?" 
+    rosemi "And you two are coming along too, right?" 
 
     show nina happy
-    nina "I wouldn't miss it"
+    nina "I wouldn't miss it."
 
     show selen happy
     selen "Absolutely! And I'll be the first to arrive this time." 
