@@ -476,7 +476,7 @@ label intro_day_1_3:
     reimu "It felt like they were trying to show me something... which is why I followed them in the first place…" 
 
     show reimu sad
-    selen "Hmm I don't know much about these flowers, but I think Rosemi should, right?" 
+    selen "Hmm... I don't know much about these flowers, but I think Rosemi should, right?" 
 
     show rosemi worried
     rosemi "Well, I don't know if this'll be of much help, but these are Forget-Me-Nots. I found a patch of them in the forest behind the Rehab Center." 
